@@ -924,6 +924,89 @@
         "Serveer de koolsalade op de rijst, leg de kip met saus erbovenop en bestrooi met sesamzaad."
       ],
       "fotoBron": "@chefvanderlecq (Instagram)"
+    },
+    {
+      "id": "rodekool-stamppot",
+      "naam": "Rodekoolstamppot met gehakt",
+      "beschrijving": "Hollandse stamppot van zoetige rode kool en aardappel, met gehaktballen en jus.",
+      "keuken": "Hollands",
+      "tijd": 45,
+      "personen": 4,
+      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Rodekoolstamppot_met_noten_en_kaas_2026.jpg?width=900",
+      "fotoBron": "Wikimedia Commons (vergelijkbaar gerecht)",
+      "bron": "Recept van Bjorn",
+      "ingredienten": [
+        {
+          "n": "aardappel",
+          "mv": "aardappelen",
+          "q": 1000,
+          "u": "g",
+          "a": "Groente & fruit",
+          "x": "kruimig"
+        },
+        {
+          "n": "rode kool",
+          "q": 650,
+          "u": "g",
+          "a": "Groente & fruit",
+          "x": "vers"
+        },
+        {
+          "n": "basterdsuiker",
+          "q": 2.5,
+          "u": "el",
+          "a": "Voorraadkast",
+          "x": "2 à 3 schepjes, naar smaak"
+        },
+        {
+          "n": "gehakt",
+          "q": 500,
+          "u": "g",
+          "a": "Vlees & vis"
+        },
+        {
+          "n": "jus",
+          "q": null,
+          "u": "",
+          "a": "Blik & potten",
+          "x": "zakje of pot"
+        },
+        {
+          "n": "boter",
+          "q": 30,
+          "u": "g",
+          "a": "Zuivel & eieren",
+          "x": "voor het bakken en de stamppot"
+        },
+        {
+          "n": "melk",
+          "q": null,
+          "u": "",
+          "a": "Zuivel & eieren",
+          "x": "scheutje, voor de stamppot"
+        },
+        {
+          "n": "azijn",
+          "q": 1,
+          "u": "el",
+          "a": "Voorraadkast",
+          "x": "optioneel, houdt de kool mooi rood"
+        },
+        {
+          "n": "zout en zwarte peper",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast"
+        }
+      ],
+      "stappen": [
+        "Schil de aardappelen, snijd ze in gelijke stukken en kook ze in water met een snufje zout in ongeveer 20 minuten gaar.",
+        "Snijd ondertussen de rode kool fijn. Doe hem in een pan met een bodempje water, de basterdsuiker, de azijn en een snufje zout. Deksel erop en laat 20 minuten zachtjes stoven tot de kool zacht is. Roer af en toe.",
+        "Breng het gehakt op smaak met zout en peper en draai er 4 ballen van (of kleine balletjes). Bak ze in een klontje boter rondom bruin, zet het vuur laag en laat ze met de deksel op de pan nog 15 minuten garen. Keer ze af en toe.",
+        "Maak de jus volgens de verpakking. Je kunt er ook het braadvet van het gehakt doorheen roeren.",
+        "Giet de aardappelen af en stamp ze fijn met een klontje boter en een scheutje warme melk. Laat de rode kool uitlekken, schep hem erdoor en breng op smaak met zout en peper.",
+        "Serveer de stamppot met het gehakt en de jus."
+      ]
     }
   ]
 }
