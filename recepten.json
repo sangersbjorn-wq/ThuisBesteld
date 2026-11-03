@@ -679,6 +679,172 @@
         "Warm de wraps op volgens de verpakking.",
         "Vul elke wrap met een handje sla en de helft van het zoete-aardappelmengsel. Schenk er wat chiliyoghurt over en serveer."
       ]
+    },
+    {
+      "id": "curry-zoete-aardappel-kikkererwten",
+      "naam": "Curry met zoete aardappel en kikkererwten",
+      "beschrijving": "Romige kokoscurry met zoete aardappel, krokante kikkererwten en frisse yoghurt.",
+      "keuken": "Indiaas",
+      "tijd": 65,
+      "personen": 8,
+      "personenNotitie": "8 porties, goed in te vriezen",
+      "foto": "https://miljuschka.nl/wp-content/uploads/2026/04/Kikkererwten-curry.jpg",
+      "fotoBron": "Miljuschka",
+      "bron": "https://miljuschka.nl/budget-koken-curry-van-zoete-aardappel-en-kikkererwten/",
+      "ingredienten": [
+        {
+          "n": "olijfolie",
+          "q": 4,
+          "u": "el",
+          "a": "Voorraadkast"
+        },
+        {
+          "n": "ui",
+          "mv": "uien",
+          "q": 2,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "groot (of 4 kleine)"
+        },
+        {
+          "n": "gemberwortel",
+          "q": 5,
+          "u": "cm",
+          "a": "Groente & fruit",
+          "x": "geraspt"
+        },
+        {
+          "n": "knoflook",
+          "q": 5,
+          "u": "teen",
+          "a": "Groente & fruit",
+          "x": "4 à 6 tenen"
+        },
+        {
+          "n": "kurkuma",
+          "q": 1,
+          "u": "el",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "chilipoeder",
+          "q": 1,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "kardemom",
+          "q": 1,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "kerriepoeder",
+          "q": 1,
+          "u": "el",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "zoete aardappel",
+          "q": 500,
+          "u": "g",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "kikkererwten",
+          "q": 3,
+          "u": "blik",
+          "a": "Blik & potten",
+          "x": "voor de curry"
+        },
+        {
+          "n": "kokosmelk",
+          "q": 2,
+          "u": "blik",
+          "a": "Blik & potten"
+        },
+        {
+          "n": "bouillonblokje",
+          "mv": "bouillonblokjes",
+          "q": 3,
+          "u": "",
+          "a": "Kruiden & specerijen",
+          "heel": true
+        },
+        {
+          "n": "water",
+          "q": 800,
+          "u": "ml",
+          "a": "Voorraadkast",
+          "x": "kokend",
+          "geenBoodschap": true
+        },
+        {
+          "n": "zout en zwarte peper",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast"
+        },
+        {
+          "n": "kikkererwten",
+          "q": 1,
+          "u": "blik",
+          "a": "Blik & potten",
+          "x": "voor de krokante kikkererwten, uitgelekt en afgespoeld"
+        },
+        {
+          "n": "komijnzaad",
+          "q": 1,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "olijfolie",
+          "q": 1,
+          "u": "tl",
+          "a": "Voorraadkast",
+          "x": "voor de krokante kikkererwten"
+        },
+        {
+          "n": "limoen",
+          "mv": "limoenen",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "in partjes"
+        },
+        {
+          "n": "yoghurt",
+          "q": 8,
+          "u": "el",
+          "a": "Zuivel & eieren"
+        },
+        {
+          "n": "koriander",
+          "q": 1,
+          "u": "bosje",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "naan",
+          "q": null,
+          "u": "",
+          "a": "Brood & wraps",
+          "x": "erbij"
+        }
+      ],
+      "stappen": [
+        "Pel en snipper de uien en de knoflook en rasp de gember.",
+        "Verhit de olijfolie in een grote pan en bak ui, gember en knoflook ongeveer 8 minuten op laag vuur tot ze zacht zijn.",
+        "Voeg kurkuma, kardemom, kerriepoeder, chilipoeder en wat zout en peper toe en bak 5 minuten mee, zodat de kruiden gaan geuren.",
+        "Doe de uitgelekte kikkererwten voor de curry erbij en bak ongeveer 10 minuten mee.",
+        "Schil de zoete aardappel en snijd in stukken.",
+        "Voeg de zoete aardappel, kokosmelk, het kokende water en de verkruimelde bouillonblokjes toe. Breng aan de kook en laat 30 minuten zachtjes pruttelen tot de zoete aardappel zacht is en de saus wat is ingedikt. Is de saus nog te dun? Laat hem dan langer zonder deksel pruttelen, of gebruik de volgende keer wat minder water.",
+        "Verwarm ondertussen de oven voor op 220 °C.",
+        "Hussel het blik kikkererwten voor de topping met de olijfolie, het komijnzaad en wat zout en peper. Verdeel over een bakplaat met bakpapier.",
+        "Rooster ongeveer 15 minuten in de oven tot ze goudbruin en krokant zijn.",
+        "Serveer de curry met een flinke lepel yoghurt, korianderblaadjes, partjes limoen en de krokante kikkererwten. Lekker met naan. Tip: roer de laatste minuten een handje spinazie erdoor."
+      ]
     }
   ]
 }
