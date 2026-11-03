@@ -171,6 +171,8 @@ textarea,select{width:100%;font:inherit;font-size:16px;background:var(--papier);
     <div class="chips" id="f-keuken"></div>
     <div class="label">Tijd</div>
     <div class="chips" id="f-tijd"></div>
+    <div class="label">Soort</div>
+    <div class="chips" id="f-vega"></div>
     <div class="lijst" id="lijst"></div>
   </main>
 
@@ -217,7 +219,7 @@ function bewaar(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch
 let R = [];
 let mandje = laad('tb-mandje', []);      // [{id, p, restje}]
 let gevinkt = laad('tb-gevinkt', {});
-let filter = { keuken: 'Alles', tijd: 'alles' };
+let filter = { keuken: 'Alles', tijd: 'alles', vega: false };
 let wanneer = 'Vanavond';
 
 const AFDELINGEN = ['Groente & fruit','Vlees & vis','Zuivel & eieren','Pasta, rijst & granen','Brood & wraps','Blik & potten','Kruiden & specerijen','Voorraadkast'];
@@ -270,13 +272,14 @@ function tekenFilters(){
   const keukens = ['Alles', ...[...new Set(R.map(r => r.keuken))].sort()];
   $('#f-keuken').innerHTML = keukens.map(k => `<button class="chip ${filter.keuken === k ? 'aan' : ''}" data-k="${esc(k)}">${esc(k)}</button>`).join('');
   $('#f-tijd').innerHTML = TIJDEN.map(([v, l]) => `<button class="chip ${filter.tijd === v ? 'aan' : ''}" data-t="${v}">${l}</button>`).join('');
+  $('#f-vega').innerHTML = `<button class="chip ${!filter.vega ? 'aan' : ''}" data-vega="0">Alles</button><button class="chip ${filter.vega ? 'aan' : ''}" data-vega="1">🌱 Vega</button>`;
 }
 function tekenMenu(){
   tekenFilters();
-  const zicht = R.filter(r => (filter.keuken === 'Alles' || r.keuken === filter.keuken) && pastTijd(r.tijd)).sort((a, b) => a.tijd - b.tijd);
+  const zicht = R.filter(r => (filter.keuken === 'Alles' || r.keuken === filter.keuken) && pastTijd(r.tijd) && (!filter.vega || r.vega)).sort((a, b) => a.tijd - b.tijd);
   $('#lijst').innerHTML = zicht.length ? zicht.map(r => {
     const inM = mandje.some(m => m.id === r.id);
-    return `<div class="kaart" data-open="${r.id}">${beeld(r)}<div class="info"><div><h3>${esc(r.naam)}</h3><div class="meta">${esc(r.keuken)} · ${tijdTekst(r.tijd)}</div></div><button class="plus ${inM ? 'in' : ''}" data-plus="${r.id}" aria-label="Toevoegen">${inM ? '✓' : '+'}</button></div></div>`;
+    return `<div class="kaart" data-open="${r.id}">${beeld(r)}<div class="info"><div><h3>${esc(r.naam)}</h3><div class="meta">${esc(r.keuken)} · ${tijdTekst(r.tijd)}${r.vega ? ' · 🌱 vega' : ''}</div></div><button class="plus ${inM ? 'in' : ''}" data-plus="${r.id}" aria-label="Toevoegen">${inM ? '✓' : '+'}</button></div></div>`;
   }).join('') : `<div class="leeg">Niets gevonden met deze filters.</div>`;
 }
 
@@ -502,6 +505,7 @@ document.addEventListener('click', e => {
   if (d.tab) return naarTab(d.tab);
   if (d.k){ filter.keuken = d.k; return tekenMenu(); }
   if (d.t){ filter.tijd = d.t; return tekenMenu(); }
+  if (d.vega){ filter.vega = d.vega === '1'; return tekenMenu(); }
   if (d.plus){ e.stopPropagation(); return toggleMandje(d.plus); }
   if (d.open) return openRecept(d.open);
   if (d.d && open){ open.p = Math.min(12, Math.max(1, open.p + +d.d)); return tekenDetail(); }
@@ -518,7 +522,7 @@ document.addEventListener('click', e => {
   if (d.tm && kook) return startTimer(+d.tm, `Stap ${kook.stap} · ${d.tl}`);
   if (d.tx){ timers = timers.filter(x => x.id !== +d.tx); return tekenTimers(); }
   if (t.id === 'sluit-detail') return sluitDetail();
-  if (t.id === 'verras'){ const pool = R.filter(r => (filter.keuken === 'Alles' || r.keuken === filter.keuken) && pastTijd(r.tijd)); if (pool.length) openRecept(pool[Math.floor(Math.random() * pool.length)].id); return; }
+  if (t.id === 'verras'){ const pool = R.filter(r => (filter.keuken === 'Alles' || r.keuken === filter.keuken) && pastTijd(r.tijd) && (!filter.vega || r.vega)); if (pool.length) openRecept(pool[Math.floor(Math.random() * pool.length)].id); return; }
   if (d.dp){ const m = mandje.find(x => x.id === t.parentElement.dataset.id); m.p = Math.min(12, Math.max(1, m.p + +d.dp)); bewaarMandje(); return tekenBestelling(); }
   if (d.weg){ mandje = mandje.filter(m => m.id !== d.weg); bewaarMandje(); return tekenBestelling(); }
   if (d.w){ wanneer = d.w; return tekenBestelling(); }

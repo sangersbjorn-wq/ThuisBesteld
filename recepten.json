@@ -165,7 +165,8 @@
         "Veeg de pan schoon, smelt de rest van de boter en bak de kip (met yoghurt) 5 minuten aan. Voeg de saus toe en laat nog 5–10 minuten pruttelen. Proef en breng op smaak met suiker, zout, peper of extra chili.",
         "Bestrooi met veel korianderblad. Serveer met rijst en naan."
       ],
-      "fotoBron": "Hubie / Wikimedia Commons, CC BY-SA"
+      "fotoBron": "Hubie / Wikimedia Commons, CC BY-SA",
+      "vega": false
     },
     {
       "id": "carbonara",
@@ -227,7 +228,8 @@
         "Giet de pasta af en schep hem door de guanciale in de pan. Haal de pan van het vuur en laat even iets afkoelen.",
         "Roer het ei-kaasmengsel erdoor tot alle pasta bedekt is en serveer direct."
       ],
-      "fotoBron": "Mattes Boch / Wikimedia Commons, publiek domein"
+      "fotoBron": "Mattes Boch / Wikimedia Commons, publiek domein",
+      "vega": false
     },
     {
       "id": "lasagne-chorizo",
@@ -376,7 +378,8 @@
         "Maak de bechamel: smelt de boter, roer de bloem erdoor en voeg al roerend beetje bij beetje melk toe tot het indikt. Roer er wat Parmezaanse kaas door en breng op smaak.",
         "Schep een laagje saus in een ovenschaal, leg er lasagnebladen op en herhaal. Eindig met vleessaus en bechamel en bestrooi met mozzarella en Parmezaanse kaas.",
         "Bak 30–35 minuten tot goudbruin en laat 5–10 minuten rusten."
-      ]
+      ],
+      "vega": false
     },
     {
       "id": "giouvetsi",
@@ -477,7 +480,8 @@
         "Voeg de tomatenblokjes en het laurierblad toe, en zoveel water dat het vlees net onder staat. Deksel erop en ongeveer 2 uur laten pruttelen.",
         "Haal het laurierblad eruit, voeg de bouillon toe en breng aan de kook. Kook de orzo erin gaar (± 11 minuten) en blijf goed roeren. Is de bouillon op maar de orzo nog niet gaar? Doe er dan een scheutje bij.",
         "Zet het vuur uit en roer er wat geraspte Parmezaanse kaas door."
-      ]
+      ],
+      "vega": false
     },
     {
       "id": "roti-zoete-aardappel",
@@ -594,7 +598,8 @@
         "Voeg de kip toe en bak rondom bruin. Doe dan de zoete aardappel en het water erbij en laat ongeveer 30 minuten zachtjes pruttelen met de deksel erop. Af en toe roeren.",
         "Kook ondertussen de eieren hard. Doe de boontjes er de laatste 5–10 minuten bij.",
         "Warm de rotivellen op en serveer met de curry en de eieren."
-      ]
+      ],
+      "vega": false
     },
     {
       "id": "wrap-zoete-aardappel",
@@ -678,7 +683,8 @@
         "Meng ondertussen de yoghurt met 2 el chilisaus.",
         "Warm de wraps op volgens de verpakking.",
         "Vul elke wrap met een handje sla en de helft van het zoete-aardappelmengsel. Schenk er wat chiliyoghurt over en serveer."
-      ]
+      ],
+      "vega": true
     },
     {
       "id": "curry-zoete-aardappel-kikkererwten",
@@ -844,7 +850,8 @@
         "Rooster ongeveer 15 minuten in de oven tot ze goudbruin en krokant zijn.",
         "Serveer de curry met een flinke lepel yoghurt, korianderblaadjes, partjes limoen en de krokante kikkererwten. Lekker met naan. Tip: roer de laatste minuten een handje spinazie erdoor."
       ],
-      "fotoBron": "Miljuschka"
+      "fotoBron": "Miljuschka",
+      "vega": true
     },
     {
       "id": "sticky-kip-rodekoolsalade",
@@ -923,7 +930,8 @@
         "Meng de rode kool, wakame en sesamdressing tot een koolsalade.",
         "Serveer de koolsalade op de rijst, leg de kip met saus erbovenop en bestrooi met sesamzaad."
       ],
-      "fotoBron": "@chefvanderlecq (Instagram)"
+      "fotoBron": "@chefvanderlecq (Instagram)",
+      "vega": false
     },
     {
       "id": "rodekool-stamppot",
@@ -1006,7 +1014,8 @@
         "Maak de jus volgens de verpakking. Je kunt er ook het braadvet van het gehakt doorheen roeren.",
         "Giet de aardappelen af en stamp ze fijn met een klontje boter en een scheutje warme melk. Laat de rode kool uitlekken, schep hem erdoor en breng op smaak met zout en peper.",
         "Serveer de stamppot met het gehakt en de jus."
-      ]
+      ],
+      "vega": false
     },
     {
       "id": "italiaanse-stamppot",
@@ -1128,7 +1137,8 @@
         "Giet de aardappelen af en stamp ze met peper, zout, een paar lepels geraspte Parmezaanse kaas en de rucola tot een stamppot.",
         "Schep de gebakken courgette met tomaat en de pesto erdoor.",
         "Serveer met de krokante pancetta en de worstjes. Eet smakelijk!"
-      ]
+      ],
+      "vega": false
     },
     {
       "id": "harissa-gnocchi-butterbeans",
@@ -1288,7 +1298,8 @@
         "Roer de gnocchi en cherrytomaten erdoor. Doe de deksel op de pan en zet 15 minuten in de oven. Haal de deksel eraf en bak nog 10 minuten.",
         "Meng ondertussen de tahin, het citroensap en een snufje zout. Voeg beetje bij beetje water toe tot je een gladde saus hebt.",
         "Haal de pan uit de oven. Top met de tahindressing, koriander, granaatappelmelasse, granaatappelpitjes en zwarte peper."
-      ]
+      ],
+      "vega": true
     }
   ]
 }
