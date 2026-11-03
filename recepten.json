@@ -688,7 +688,7 @@
       "tijd": 65,
       "personen": 8,
       "personenNotitie": "8 porties, goed in te vriezen",
-      "foto": null,
+      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Spinach-Chickpea_Curry_(3117324894).jpg?width=900",
       "bron": "https://miljuschka.nl/budget-koken-curry-van-zoete-aardappel-en-kikkererwten/",
       "ingredienten": [
         {
@@ -843,7 +843,8 @@
         "Hussel het blik kikkererwten voor de topping met de olijfolie, het komijnzaad en wat zout en peper. Verdeel over een bakplaat met bakpapier.",
         "Rooster ongeveer 15 minuten in de oven tot ze goudbruin en krokant zijn.",
         "Serveer de curry met een flinke lepel yoghurt, korianderblaadjes, partjes limoen en de krokante kikkererwten. Lekker met naan. Tip: roer de laatste minuten een handje spinazie erdoor."
-      ]
+      ],
+      "fotoBron": "Wikimedia Commons (vergelijkbaar gerecht)"
     },
     {
       "id": "sticky-kip-rodekoolsalade",
@@ -853,7 +854,7 @@
       "tijd": 20,
       "personen": 1,
       "personenNotitie": "recept per persoon",
-      "foto": null,
+      "foto": "foto/sticky-kip-rodekoolsalade.jpg",
       "bron": "Instagram – @chefvanderlecq",
       "ingredienten": [
         {
@@ -921,7 +922,8 @@
         "Bak de kippendijen 4 minuten op hoog vuur. Snijd ze in blokjes en bak nog 2 minuten op hoog vuur met de honing, sriracha en sojasaus tot alles mooi sticky is.",
         "Meng de rode kool, wakame en sesamdressing tot een koolsalade.",
         "Serveer de koolsalade op de rijst, leg de kip met saus erbovenop en bestrooi met sesamzaad."
-      ]
+      ],
+      "fotoBron": "@chefvanderlecq (Instagram)"
     }
   ]
 }
