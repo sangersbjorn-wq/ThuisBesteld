@@ -1129,6 +1129,166 @@
         "Schep de gebakken courgette met tomaat en de pesto erdoor.",
         "Serveer met de krokante pancetta en de worstjes. Eet smakelijk!"
       ]
+    },
+    {
+      "id": "harissa-gnocchi-butterbeans",
+      "naam": "Harissa-gnocchi met butterbeans",
+      "beschrijving": "Pittige ovenschotel van gnocchi, limabonen en tomaat, met romige tahindressing en granaatappel.",
+      "keuken": "Midden-Oosters",
+      "tijd": 45,
+      "personen": 3,
+      "personenNotitie": "3 à 4 personen (geschat)",
+      "foto": "foto/harissa-gnocchi-butterbeans.jpg",
+      "fotoBron": "@jorisdekock (Instagram)",
+      "bron": "Instagram – @jorisdekock",
+      "ingredienten": [
+        {
+          "n": "ui",
+          "mv": "uien",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "wit, gesneden"
+        },
+        {
+          "n": "knoflook",
+          "q": 3,
+          "u": "teen",
+          "a": "Groente & fruit",
+          "x": "gesnipperd"
+        },
+        {
+          "n": "tomatenpuree",
+          "q": 2,
+          "u": "el",
+          "a": "Blik & potten"
+        },
+        {
+          "n": "komijnzaad",
+          "q": 1,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "korianderpoeder",
+          "q": 1,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "paprikapoeder",
+          "q": 1,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "harissa",
+          "q": 2,
+          "u": "el",
+          "a": "Blik & potten"
+        },
+        {
+          "n": "zongedroogde tomaat",
+          "mv": "zongedroogde tomaten",
+          "q": 6,
+          "u": "",
+          "a": "Blik & potten",
+          "x": "gesneden"
+        },
+        {
+          "n": "tomatenblokjes",
+          "q": 1,
+          "u": "blik",
+          "a": "Blik & potten",
+          "x": "blik van 400 g"
+        },
+        {
+          "n": "limabonen",
+          "q": 1,
+          "u": "blik",
+          "a": "Blik & potten",
+          "x": "butterbeans, blik van 400 g, mét vocht"
+        },
+        {
+          "n": "gnocchi",
+          "q": 500,
+          "u": "g",
+          "a": "Pasta, rijst & granen",
+          "x": "check of ze vegan zijn"
+        },
+        {
+          "n": "cherrytomaten",
+          "q": 300,
+          "u": "g",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "olie",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast",
+          "x": "scheut, om te bakken"
+        },
+        {
+          "n": "zout en zwarte peper",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast"
+        },
+        {
+          "n": "tahin",
+          "q": 8,
+          "u": "el",
+          "a": "Blik & potten",
+          "x": "½ cup, voor de dressing"
+        },
+        {
+          "n": "citroen",
+          "mv": "citroenen",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "sap, voor de dressing"
+        },
+        {
+          "n": "water",
+          "q": 3,
+          "u": "el",
+          "a": "Voorraadkast",
+          "x": "2 à 4 el, voor de dressing",
+          "geenBoodschap": true
+        },
+        {
+          "n": "koriander",
+          "q": null,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "topping"
+        },
+        {
+          "n": "granaatappelmelasse",
+          "q": null,
+          "u": "",
+          "a": "Blik & potten",
+          "x": "topping"
+        },
+        {
+          "n": "granaatappelpitjes",
+          "q": null,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "topping"
+        }
+      ],
+      "stappen": [
+        "Verwarm de oven voor op 200 °C.",
+        "Verhit een scheut olie in een ovenbestendige pan op middelhoog vuur. Fruit de ui met een snufje zout in 4–5 minuten glazig. Voeg de knoflook toe en bak 1 minuut mee.",
+        "Voeg de tomatenpuree, komijnzaad, korianderpoeder en paprikapoeder toe en bak 1 minuut mee.",
+        "Voeg de harissa, tomatenblokjes, zongedroogde tomaten en limabonen (met vocht) toe en laat 5 minuten zachtjes pruttelen. Breng op smaak met zout en peper.",
+        "Roer de gnocchi en cherrytomaten erdoor. Doe de deksel op de pan en zet 15 minuten in de oven. Haal de deksel eraf en bak nog 10 minuten.",
+        "Meng ondertussen de tahin, het citroensap en een snufje zout. Voeg beetje bij beetje water toe tot je een gladde saus hebt.",
+        "Haal de pan uit de oven. Top met de tahindressing, koriander, granaatappelmelasse, granaatappelpitjes en zwarte peper."
+      ]
     }
   ]
 }
