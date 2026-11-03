@@ -844,6 +844,84 @@
         "Rooster ongeveer 15 minuten in de oven tot ze goudbruin en krokant zijn.",
         "Serveer de curry met een flinke lepel yoghurt, korianderblaadjes, partjes limoen en de krokante kikkererwten. Lekker met naan. Tip: roer de laatste minuten een handje spinazie erdoor."
       ]
+    },
+    {
+      "id": "sticky-kip-rodekoolsalade",
+      "naam": "Sticky sriracha-kip met rodekoolsalade",
+      "beschrijving": "Kleverige kip met honing, sriracha en soja op rijst, met frisse rodekool-wakamesalade.",
+      "keuken": "Aziatisch",
+      "tijd": 20,
+      "personen": 1,
+      "personenNotitie": "recept per persoon",
+      "foto": null,
+      "bron": "Instagram – @chefvanderlecq",
+      "ingredienten": [
+        {
+          "n": "kippendij",
+          "mv": "kippendijen",
+          "q": 1,
+          "u": "",
+          "a": "Vlees & vis",
+          "x": "filet",
+          "heel": true
+        },
+        {
+          "n": "honing",
+          "q": 2,
+          "u": "el",
+          "a": "Voorraadkast"
+        },
+        {
+          "n": "sriracha",
+          "q": 2,
+          "u": "el",
+          "a": "Blik & potten"
+        },
+        {
+          "n": "sojasaus",
+          "q": 2,
+          "u": "el",
+          "a": "Blik & potten"
+        },
+        {
+          "n": "sesamzaad",
+          "q": 2,
+          "u": "el",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "geraspte rode kool",
+          "q": 1,
+          "u": "hand",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "wakame",
+          "q": 1,
+          "u": "hand",
+          "a": "Groente & fruit",
+          "x": "zeewiersalade"
+        },
+        {
+          "n": "sesamdressing",
+          "q": 4,
+          "u": "el",
+          "a": "Blik & potten"
+        },
+        {
+          "n": "rijst",
+          "q": 75,
+          "u": "g",
+          "a": "Pasta, rijst & granen",
+          "x": "witte rijst; hoeveelheid geschat"
+        }
+      ],
+      "stappen": [
+        "Kook de rijst volgens de verpakking (ongeveer 15 minuten).",
+        "Bak de kippendijen 4 minuten op hoog vuur. Snijd ze in blokjes en bak nog 2 minuten op hoog vuur met de honing, sriracha en sojasaus tot alles mooi sticky is.",
+        "Meng de rode kool, wakame en sesamdressing tot een koolsalade.",
+        "Serveer de koolsalade op de rijst, leg de kip met saus erbovenop en bestrooi met sesamzaad."
+      ]
     }
   ]
 }
