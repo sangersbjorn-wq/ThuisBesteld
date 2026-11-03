@@ -236,7 +236,7 @@
       "keuken": "Italiaans",
       "tijd": 75,
       "personen": 6,
-      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Lasagna_food.jpg?width=900",
+      "foto": null,
       "bron": "Google Drive – Kookboek",
       "ingredienten": [
         {
@@ -376,8 +376,7 @@
         "Maak de bechamel: smelt de boter, roer de bloem erdoor en voeg al roerend beetje bij beetje melk toe tot het indikt. Roer er wat Parmezaanse kaas door en breng op smaak.",
         "Schep een laagje saus in een ovenschaal, leg er lasagnebladen op en herhaal. Eindig met vleessaus en bechamel en bestrooi met mozzarella en Parmezaanse kaas.",
         "Bak 30–35 minuten tot goudbruin en laat 5–10 minuten rusten."
-      ],
-      "fotoBron": "Jon Sullivan / Wikimedia Commons, publiek domein"
+      ]
     },
     {
       "id": "giouvetsi",
@@ -388,7 +387,7 @@
       "tijdNotitie": "vooral pruttelen",
       "personen": 2,
       "personenNotitie": "2 à 3 personen",
-      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Giouvetsi.JPG?width=900",
+      "foto": null,
       "bron": "Google Drive – Kookboek",
       "ingredienten": [
         {
@@ -478,8 +477,7 @@
         "Voeg de tomatenblokjes en het laurierblad toe, en zoveel water dat het vlees net onder staat. Deksel erop en ongeveer 2 uur laten pruttelen.",
         "Haal het laurierblad eruit, voeg de bouillon toe en breng aan de kook. Kook de orzo erin gaar (± 11 minuten) en blijf goed roeren. Is de bouillon op maar de orzo nog niet gaar? Doe er dan een scheutje bij.",
         "Zet het vuur uit en roer er wat geraspte Parmezaanse kaas door."
-      ],
-      "fotoBron": "Robert Kindermann / Wikimedia Commons, CC BY-SA"
+      ]
     },
     {
       "id": "roti-zoete-aardappel",
@@ -488,7 +486,7 @@
       "keuken": "Surinaams",
       "tijd": 45,
       "personen": 2,
-      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Roti_Masala_Trafasie.JPG?width=900",
+      "foto": null,
       "bron": "Google Drive – Kookboek",
       "ingredienten": [
         {
@@ -596,8 +594,7 @@
         "Voeg de kip toe en bak rondom bruin. Doe dan de zoete aardappel en het water erbij en laat ongeveer 30 minuten zachtjes pruttelen met de deksel erop. Af en toe roeren.",
         "Kook ondertussen de eieren hard. Doe de boontjes er de laatste 5–10 minuten bij.",
         "Warm de rotivellen op en serveer met de curry en de eieren."
-      ],
-      "fotoBron": "Laig / Wikimedia Commons"
+      ]
     },
     {
       "id": "wrap-zoete-aardappel",
@@ -606,7 +603,7 @@
       "keuken": "Fusion",
       "tijd": 25,
       "personen": 2,
-      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Wrap_up_and_done_(3250921760).jpg?width=900",
+      "foto": null,
       "bron": "Google Drive – Kookboek",
       "ingredienten": [
         {
@@ -681,8 +678,7 @@
         "Meng ondertussen de yoghurt met 2 el chilisaus.",
         "Warm de wraps op volgens de verpakking.",
         "Vul elke wrap met een handje sla en de helft van het zoete-aardappelmengsel. Schenk er wat chiliyoghurt over en serveer."
-      ],
-      "fotoBron": "Miia Ranta / Wikimedia Commons, CC BY-SA"
+      ]
     }
   ]
 }
