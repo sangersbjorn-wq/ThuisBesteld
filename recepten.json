@@ -1007,6 +1007,128 @@
         "Giet de aardappelen af en stamp ze fijn met een klontje boter en een scheutje warme melk. Laat de rode kool uitlekken, schep hem erdoor en breng op smaak met zout en peper.",
         "Serveer de stamppot met het gehakt en de jus."
       ]
+    },
+    {
+      "id": "italiaanse-stamppot",
+      "naam": "Italiaanse stamppot",
+      "beschrijving": "Stamppot met rucola, courgette, zongedroogde tomaat en pesto, met krokante pancetta en Italiaanse worstjes.",
+      "keuken": "Italiaans",
+      "tijd": 35,
+      "personen": 4,
+      "foto": "foto/italiaanse-stamppot.jpg",
+      "fotoBron": "@chefkeluc (Instagram)",
+      "bron": "Instagram – @chefkeluc",
+      "ingredienten": [
+        {
+          "n": "aardappel",
+          "mv": "aardappelen",
+          "q": 1000,
+          "u": "g",
+          "a": "Groente & fruit",
+          "x": "kruimig, geschild en in kwarten"
+        },
+        {
+          "n": "courgette",
+          "mv": "courgettes",
+          "q": 2,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "in halve plakjes"
+        },
+        {
+          "n": "zongedroogde tomaten",
+          "q": 180,
+          "u": "g",
+          "a": "Blik & potten",
+          "x": "in reepjes"
+        },
+        {
+          "n": "pesto",
+          "q": 2,
+          "u": "el",
+          "a": "Blik & potten",
+          "x": "kant-en-klaar, of zelf maken (zie hieronder)"
+        },
+        {
+          "n": "rucola",
+          "q": 2,
+          "u": "hand",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "Parmezaanse kaas",
+          "q": null,
+          "u": "",
+          "a": "Zuivel & eieren",
+          "x": "stukje"
+        },
+        {
+          "n": "pancetta",
+          "q": 100,
+          "u": "g",
+          "a": "Vlees & vis"
+        },
+        {
+          "n": "Italiaans worstje",
+          "mv": "Italiaanse worstjes",
+          "q": 4,
+          "u": "",
+          "a": "Vlees & vis",
+          "x": "bv. salsiccia",
+          "heel": true
+        },
+        {
+          "n": "olijfolie",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast"
+        },
+        {
+          "n": "zout en zwarte peper",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast"
+        },
+        {
+          "n": "basilicum",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "plantje, alleen voor zelfgemaakte pesto",
+          "heel": true
+        },
+        {
+          "n": "knoflook",
+          "q": 1,
+          "u": "teen",
+          "a": "Groente & fruit",
+          "x": "alleen voor zelfgemaakte pesto"
+        },
+        {
+          "n": "pistachenoten",
+          "q": 1,
+          "u": "el",
+          "a": "Voorraadkast",
+          "x": "alleen voor zelfgemaakte pesto"
+        },
+        {
+          "n": "citroen",
+          "mv": "citroenen",
+          "q": 0.5,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "sap, alleen voor zelfgemaakte pesto"
+        }
+      ],
+      "stappen": [
+        "Kook de aardappelen in ongeveer 20 minuten gaar.",
+        "Bak de courgette op hoog vuur bruin en gaar in olijfolie, met peper en zout. Voeg halverwege de zongedroogde tomaten toe. Zet het vuur uit als alles mooi zacht is maar nog een lichte bite heeft.",
+        "Maak je de pesto zelf? Meng dan de basilicumblaadjes, knoflook, pistachenoten, 2 el geraspte Parmezaanse kaas en het citroensap in een vijzel of blender tot een gladde pesto. Voeg naar smaak olijfolie, peper en zout toe.",
+        "Bak de pancetta rustig krokant. Voeg na 5 minuten de worstjes toe en bak ze in het vet van de pancetta bruin en gaar op middelhoog vuur.",
+        "Giet de aardappelen af en stamp ze met peper, zout, een paar lepels geraspte Parmezaanse kaas en de rucola tot een stamppot.",
+        "Schep de gebakken courgette met tomaat en de pesto erdoor.",
+        "Serveer met de krokante pancetta en de worstjes. Eet smakelijk!"
+      ]
     }
   ]
 }
