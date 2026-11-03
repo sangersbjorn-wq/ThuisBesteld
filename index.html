@@ -129,6 +129,33 @@ textarea,select{width:100%;font:inherit;font-size:16px;background:var(--papier);
 .toast{position:fixed;left:50%;bottom:calc(var(--safe-b) + 96px);transform:translate(-50%,20px);background:var(--houtskool);color:var(--papier);padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.3s;z-index:60;white-space:nowrap}
 .toast.zie{opacity:1;transform:translate(-50%,0)}
 .verborgen{display:none!important}
+.kook{position:fixed;inset:0;z-index:50;background:#2B2925;color:#F5F1EA;display:flex;flex-direction:column;padding:calc(var(--safe-t) + 14px) 22px calc(var(--safe-b) + 18px);transform:translateY(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.kook.open{transform:none}
+.kook-top{display:flex;align-items:center;gap:12px;max-width:640px;width:100%;margin:0 auto}
+.kook-top .titel{font-family:var(--serif);font-size:16px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kook-top button{width:38px;height:38px;border-radius:50%;background:rgba(245,241,234,.1);font-size:18px;display:grid;place-items:center}
+.balk{height:3px;background:rgba(245,241,234,.15);border-radius:2px;margin:14px auto 0;max-width:640px;width:100%;overflow:hidden}
+.balk i{display:block;height:100%;background:var(--eik);transition:width .3s}
+.timers{display:flex;gap:8px;flex-wrap:wrap;max-width:640px;width:100%;margin:12px auto 0}
+.timer{background:rgba(245,241,234,.1);border-radius:999px;padding:6px 8px 6px 14px;font-size:14px;font-variant-numeric:tabular-nums;display:flex;gap:8px;align-items:center}
+.timer button{width:24px;height:24px;border-radius:50%;background:rgba(245,241,234,.12);font-size:12px}
+.timer.af{background:var(--klei);animation:puls 1s infinite}
+@keyframes puls{50%{opacity:.6}}
+.kook-body{flex:1;overflow-y:auto;max-width:640px;width:100%;margin:0 auto;padding:26px 0 10px;-webkit-overflow-scrolling:touch}
+.stapnr{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--eik)}
+.staptekst{font-family:var(--serif);font-size:22px;line-height:1.5;margin:12px 0 22px}
+.kook ul.ingr li{border-color:rgba(245,241,234,.12);font-size:17px}
+.kook .x{color:rgba(245,241,234,.55)}
+.kook .label{color:rgba(245,241,234,.55)}
+.kook .item{border-color:rgba(245,241,234,.12);font-size:17px}
+.kook .item.aan .tekst{color:rgba(245,241,234,.4)}
+.tknop{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(245,241,234,.35);border-radius:999px;padding:9px 16px;font-size:15px;margin:0 8px 10px 0}
+.kook-nav{display:flex;gap:12px;max-width:640px;width:100%;margin:0 auto;padding-top:10px}
+.kook-nav button{flex:1;padding:16px;border-radius:999px;font-size:16px;font-weight:500}
+.kook-nav .terug{border:1px solid rgba(245,241,234,.3)}
+.kook-nav .verder{background:var(--rijst);color:var(--houtskool)}
+.fotobron{font-size:11px;color:var(--grijs);padding:6px 22px 0}
+.koken{font-size:13px;color:var(--klei);margin-top:8px;display:inline-block;border-bottom:1px solid currentColor}
 </style>
 </head>
 <body>
@@ -178,6 +205,7 @@ textarea,select{width:100%;font:inherit;font-size:16px;background:var(--papier);
 
 <section class="blad" id="detail"><button class="sluit" id="sluit-detail" aria-label="Sluiten">✕</button><div class="binnen" id="detail-in"></div></section>
 <section class="blad" id="status"><div class="binnen status" id="status-in"></div></section>
+<section class="kook" id="kook"></section>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -269,7 +297,7 @@ function tekenDetail(){
     const t = tekstHoeveel(i, i.q == null ? null : rondRecept(i.q * f, i.u, i.heel));
     return `<li><span class="q">${t.q || '<span class="x">naar smaak</span>'}</span><span>${esc(t.n)}${i.x ? ` <span class="x">· ${esc(i.x)}</span>` : ''}</span></li>`;
   }).join('');
-  $('#detail-in').innerHTML = `${beeld(r)}
+  $('#detail-in').innerHTML = `${beeld(r)}${r.fotoBron ? `<div class="fotobron">Foto: ${esc(r.fotoBron)}</div>` : ''}
     <div class="detail-tekst">
       <div class="meta">${esc(r.keuken)} · ${tijdTekst(r.tijd)}${r.tijdNotitie ? ' (' + esc(r.tijdNotitie) + ')' : ''}</div>
       <h2 style="margin-top:6px">${esc(r.naam)}</h2>
@@ -277,6 +305,7 @@ function tekenDetail(){
       <div class="paneel">
         <div class="personen"><span>Personen</span><div class="stepper"><button data-d="-1">−</button><b>${p}</b><button data-d="1">+</button></div></div>
         <button class="restje ${restje ? 'aan' : ''}" id="restje"><span class="vink ${restje ? 'aan' : ''}">${restje ? '✓' : ''}</span>+ restje voor lunch morgen</button>
+        <button class="knop licht" id="start-kook" style="margin-top:14px">Kookstand starten</button>
       </div>
       <div class="label" style="margin-top:26px">Ingrediënten · ${n} ${n === 1 ? 'portie' : 'porties'}</div>
       <div class="paneel" style="margin-top:0"><ul class="ingr">${ingr}</ul></div>
@@ -304,6 +333,7 @@ function tekenBestelling(){
     <div class="regel"><div class="mini">${beeld(r)}</div>
       <div><h3>${esc(r.naam)}</h3>
         <div class="stepper" data-id="${r.id}"><button data-dp="-1">−</button><b>${m.p}</b><button data-dp="1">+</button><span class="meta" style="margin:0">pers.${m.restje ? ' + restje' : ''}</span></div>
+        <button class="koken" data-kook-id="${r.id}">Kookstand</button>
       </div><button class="weg" data-weg="${r.id}">Verwijder</button></div>`).join('')
     : `<div class="leeg"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 6c10 0 18 8 18 18s-8 18-18 18S6 34 6 24c0-7 4-13 10-16" stroke-linecap="round"/></svg><div>Nog niets gekozen.<br>Kijk rustig rond in het menu.</div></div>`;
   $('#wanneer').innerHTML = ['Vanavond', 'Morgen', 'Dit weekend'].map(w => `<button class="chip ${wanneer === w ? 'aan' : ''}" data-w="${w}">${w}</button>`).join('');
@@ -388,6 +418,72 @@ function toonStatus(){
   [...document.querySelectorAll('.fases li')].forEach((li, i) => { if (i < 3) setTimeout(() => li.classList.add('klaar'), 600 + i * 900); });
 }
 
+
+/* ---------- kookstand ---------- */
+let kook = null, timers = [], wake = null, audio = null, laatstePiep = 0;
+const STOP = new Set(['rode','witte','verse','vers','grote','groot','zoete','volkoren','geraspte','zwarte','italiaanse','van','met','een','het','en','of','de','in','op']);
+const woorden = s => s.toLowerCase().split(/[^a-z]+/).filter(w => w.length > 1);
+function ingrVoorStap(r, tekst){
+  const w = woorden(tekst).filter(x => !STOP.has(x));
+  return r.ingredienten.filter(i => {
+    if (i.geenBoodschap) return false;
+    const iw = woorden(i.n + ' ' + (i.mv || '')).filter(x => !STOP.has(x));
+    return iw.some(a => w.some(b => a === b || (b.length >= 3 && a.startsWith(b)) || (b.length >= 4 && a.endsWith(b)) || (a.length >= 5 && b.startsWith(a))));
+  });
+}
+function tijdenIn(t){
+  const uit = [], re = /(\d+)(?:\s*[–-]\s*(\d+))?\s*(minuten|minuut|uur)/g; let m;
+  while ((m = re.exec(t))) uit.push({ min: +m[1] * (m[3] === 'uur' ? 60 : 1), label: m[2] ? `${m[1]}–${m[2]} ${m[3] === 'uur' ? 'uur' : 'min'}` : `${m[1]} ${m[3] === 'uur' ? 'uur' : 'min'}` });
+  return uit;
+}
+function startKook(r, n){ kook = { r, n, stap: 0, vink: {} }; tekenKook(); $('#kook').classList.add('open'); vraagWake(); }
+function sluitKook(){ kook = null; $('#kook').classList.remove('open'); try { wake && wake.release(); } catch(e){} wake = null; }
+async function vraagWake(){ try { wake = await navigator.wakeLock.request('screen'); } catch(e){} }
+document.addEventListener('visibilitychange', () => { if (kook && document.visibilityState === 'visible') vraagWake(); });
+function tekenKook(){
+  const { r, n, stap } = kook, f = n / r.personen, N = r.stappen.length;
+  const regel = i => { const t = tekstHoeveel(i, i.q == null ? null : rondRecept(i.q * f, i.u, i.heel)); return esc((t.q ? t.q + ' ' : '') + t.n) + (i.x ? ` <span class="x">· ${esc(i.x)}</span>` : ''); };
+  let body;
+  if (stap === 0){
+    body = `<div class="stapnr">Klaarzetten · ${n} ${n === 1 ? 'portie' : 'porties'}</div><div class="staptekst">Zet eerst alles klaar.</div>`
+      + r.ingredienten.filter(i => !i.geenBoodschap).map(i => { const aan = kook.vink[i.n]; return `<button class="item ${aan ? 'aan' : ''}" data-kv="${esc(i.n)}"><span class="vink ${aan ? 'aan' : ''}">${aan ? '✓' : ''}</span><span class="tekst">${regel(i)}</span></button>`; }).join('');
+  } else if (stap <= N){
+    const s = r.stappen[stap - 1], ing = ingrVoorStap(r, s), tm = tijdenIn(s);
+    body = `<div class="stapnr">Stap ${stap} van ${N}</div><div class="staptekst">${esc(s)}</div>`
+      + (tm.length ? `<div>${tm.map(t => `<button class="tknop" data-tm="${t.min}" data-tl="${esc(t.label)}">⏱ Timer ${esc(t.label)}</button>`).join('')}</div>` : '')
+      + (ing.length ? `<div class="label">Hiervoor nodig</div><ul class="ingr">${ing.map(i => `<li><span>${regel(i)}</span></li>`).join('')}</ul>` : '');
+  } else {
+    body = `<div style="text-align:center;padding-top:60px"><div class="stapnr">Klaar</div><div class="staptekst">Eet smakelijk!</div></div>`;
+  }
+  $('#kook').innerHTML = `<div class="kook-top"><button data-kook="dicht" aria-label="Sluiten">✕</button><div class="titel">${esc(r.naam)}</div></div>
+    <div class="balk"><i style="width:${Math.round(stap / (N + 1) * 100)}%"></i></div><div class="timers" id="timers"></div>
+    <div class="kook-body">${body}</div>
+    <div class="kook-nav"><button class="terug" data-kook="terug" ${stap === 0 ? 'style="visibility:hidden"' : ''}>Vorige</button><button class="verder" data-kook="${stap > N ? 'dicht' : 'verder'}">${stap === 0 ? 'Begin met koken' : stap > N ? 'Sluiten' : stap === N ? 'Klaar' : 'Volgende'}</button></div>`;
+  tekenTimers();
+}
+function startTimer(min, label){
+  try { audio = audio || new (window.AudioContext || window.webkitAudioContext)(); audio.resume(); } catch(e){}
+  timers.push({ id: Date.now(), label, end: Date.now() + min * 60000, af: false });
+  tekenTimers(); toast('Timer gestart: ' + label);
+}
+function tekenTimers(){
+  const el = document.getElementById('timers'); if (!el) return;
+  el.innerHTML = timers.map(t => { const s = Math.max(0, Math.round((t.end - Date.now()) / 1000));
+    return `<span class="timer ${t.af ? 'af' : ''}">${esc(t.label)} · ${t.af ? 'klaar!' : Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0')}<button data-tx="${t.id}" aria-label="Stop">✕</button></span>`; }).join('');
+}
+function piep(){
+  try { if (navigator.vibrate) navigator.vibrate([300, 150, 300]);
+    const o = audio.createOscillator(), g = audio.createGain(); o.frequency.value = 880; o.connect(g); g.connect(audio.destination);
+    g.gain.setValueAtTime(.001, audio.currentTime); g.gain.exponentialRampToValueAtTime(.4, audio.currentTime + .02); g.gain.exponentialRampToValueAtTime(.001, audio.currentTime + .6);
+    o.start(); o.stop(audio.currentTime + .65); } catch(e){}
+}
+setInterval(() => {
+  if (!timers.length) return;
+  for (const t of timers) if (!t.af && Date.now() >= t.end){ t.af = true; toast('⏱ ' + t.label + ' is klaar!'); }
+  if (timers.some(t => t.af) && Date.now() - laatstePiep > 4000){ laatstePiep = Date.now(); piep(); }
+  tekenTimers();
+}, 1000);
+
 /* ---------- navigatie ---------- */
 function naarTab(t){
   ['menu', 'bestelling', 'boodschappen'].forEach(v => $('#v-' + v).classList.toggle('verborgen', v !== t));
@@ -415,6 +511,12 @@ document.addEventListener('click', e => {
     if (m){ m.p = open.p; m.restje = open.restje; } else mandje.push({ id: open.r.id, p: open.p, restje: open.restje });
     bewaarMandje(); sluitDetail(); tekenMenu(); return toast('In je bestelling');
   }
+  if (t.id === 'start-kook' && open){ const r = open.r, n = open.p + (open.restje ? 1 : 0); sluitDetail(); return startKook(r, n); }
+  if (d.kookId){ const m = mandje.find(x => x.id === d.kookId), r = R.find(x => x.id === d.kookId); if (m && r) startKook(r, porties(m)); return; }
+  if (d.kook && kook){ if (d.kook === 'dicht') return sluitKook(); kook.stap += d.kook === 'verder' ? 1 : -1; tekenKook(); document.querySelector('.kook-body').scrollTop = 0; return; }
+  if (d.kv !== undefined && kook){ kook.vink[d.kv] = !kook.vink[d.kv]; return tekenKook(); }
+  if (d.tm && kook) return startTimer(+d.tm, `Stap ${kook.stap} · ${d.tl}`);
+  if (d.tx){ timers = timers.filter(x => x.id !== +d.tx); return tekenTimers(); }
   if (t.id === 'sluit-detail') return sluitDetail();
   if (t.id === 'verras'){ const pool = R.filter(r => (filter.keuken === 'Alles' || r.keuken === filter.keuken) && pastTijd(r.tijd)); if (pool.length) openRecept(pool[Math.floor(Math.random() * pool.length)].id); return; }
   if (d.dp){ const m = mandje.find(x => x.id === t.parentElement.dataset.id); m.p = Math.min(12, Math.max(1, m.p + +d.dp)); bewaarMandje(); return tekenBestelling(); }

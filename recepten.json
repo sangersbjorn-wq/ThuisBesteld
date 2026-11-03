@@ -9,31 +9,154 @@
       "tijd": 105,
       "tijdNotitie": "waarvan 1 uur marineren",
       "personen": 4,
-      "foto": null,
+      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Butter_Chicken_with_Naan.JPG?width=900",
       "bron": "Google Drive – Kookboek",
       "ingredienten": [
-        {"n": "gemberwortel", "q": 3, "u": "cm", "a": "Groente & fruit", "x": "geraspt"},
-        {"n": "knoflook", "q": 4, "u": "teen", "a": "Groente & fruit", "x": "geperst"},
-        {"n": "chilipoeder", "q": 2, "u": "tl", "a": "Kruiden & specerijen"},
-        {"n": "komijnpoeder", "q": 0.5, "u": "tl", "a": "Kruiden & specerijen"},
-        {"n": "korianderpoeder", "q": 0.5, "u": "tl", "a": "Kruiden & specerijen"},
-        {"n": "yoghurt", "q": 4, "u": "el", "a": "Zuivel & eieren"},
-        {"n": "kippendijfilet", "q": 400, "u": "g", "a": "Vlees & vis", "x": "in reepjes of blokjes"},
-        {"n": "zonnebloemolie", "q": 2, "u": "el", "a": "Voorraadkast"},
-        {"n": "boter", "q": 60, "u": "g", "a": "Zuivel & eieren"},
-        {"n": "ui", "mv": "uien", "q": 2, "u": "", "a": "Groente & fruit", "x": "in halve ringen"},
-        {"n": "koriander", "q": 0.5, "u": "bosje", "a": "Groente & fruit", "x": "steeltjes fijn, blad grof"},
-        {"n": "garam masala", "q": 1, "u": "el", "a": "Kruiden & specerijen"},
-        {"n": "kurkuma", "q": 1, "u": "tl", "a": "Kruiden & specerijen"},
-        {"n": "tomatenpuree", "q": 70, "u": "g", "a": "Blik & potten"},
-        {"n": "rietsuiker", "q": 1.5, "u": "el", "a": "Voorraadkast", "x": "1 à 2 el, naar smaak"},
-        {"n": "tomatenblokjes", "q": 1, "u": "blik", "a": "Blik & potten", "x": "blik van 400 g"},
-        {"n": "tomaat", "mv": "tomaten", "q": 2, "u": "", "a": "Groente & fruit", "x": "in blokjes"},
-        {"n": "witte wijnazijn", "q": 1.5, "u": "el", "a": "Voorraadkast"},
-        {"n": "slagroom", "q": 100, "u": "ml", "a": "Zuivel & eieren", "x": "of kookroom"},
-        {"n": "zout en zwarte peper", "q": null, "u": "", "a": "Voorraadkast"},
-        {"n": "rijst", "q": 300, "u": "g", "a": "Pasta, rijst & granen", "x": "erbij"},
-        {"n": "naan", "q": null, "u": "", "a": "Brood & wraps", "x": "erbij"}
+        {
+          "n": "gemberwortel",
+          "q": 3,
+          "u": "cm",
+          "a": "Groente & fruit",
+          "x": "geraspt"
+        },
+        {
+          "n": "knoflook",
+          "q": 4,
+          "u": "teen",
+          "a": "Groente & fruit",
+          "x": "geperst"
+        },
+        {
+          "n": "chilipoeder",
+          "q": 2,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "komijnpoeder",
+          "q": 0.5,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "korianderpoeder",
+          "q": 0.5,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "yoghurt",
+          "q": 4,
+          "u": "el",
+          "a": "Zuivel & eieren"
+        },
+        {
+          "n": "kippendijfilet",
+          "q": 400,
+          "u": "g",
+          "a": "Vlees & vis",
+          "x": "in reepjes of blokjes"
+        },
+        {
+          "n": "zonnebloemolie",
+          "q": 2,
+          "u": "el",
+          "a": "Voorraadkast"
+        },
+        {
+          "n": "boter",
+          "q": 60,
+          "u": "g",
+          "a": "Zuivel & eieren"
+        },
+        {
+          "n": "ui",
+          "mv": "uien",
+          "q": 2,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "in halve ringen"
+        },
+        {
+          "n": "koriander",
+          "q": 0.5,
+          "u": "bosje",
+          "a": "Groente & fruit",
+          "x": "steeltjes fijn, blad grof"
+        },
+        {
+          "n": "garam masala",
+          "q": 1,
+          "u": "el",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "kurkuma",
+          "q": 1,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "tomatenpuree",
+          "q": 70,
+          "u": "g",
+          "a": "Blik & potten"
+        },
+        {
+          "n": "rietsuiker",
+          "q": 1.5,
+          "u": "el",
+          "a": "Voorraadkast",
+          "x": "1 à 2 el, naar smaak"
+        },
+        {
+          "n": "tomatenblokjes",
+          "q": 1,
+          "u": "blik",
+          "a": "Blik & potten",
+          "x": "blik van 400 g"
+        },
+        {
+          "n": "tomaat",
+          "mv": "tomaten",
+          "q": 2,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "in blokjes"
+        },
+        {
+          "n": "witte wijnazijn",
+          "q": 1.5,
+          "u": "el",
+          "a": "Voorraadkast"
+        },
+        {
+          "n": "slagroom",
+          "q": 100,
+          "u": "ml",
+          "a": "Zuivel & eieren",
+          "x": "of kookroom"
+        },
+        {
+          "n": "zout en zwarte peper",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast"
+        },
+        {
+          "n": "rijst",
+          "q": 300,
+          "u": "g",
+          "a": "Pasta, rijst & granen",
+          "x": "erbij"
+        },
+        {
+          "n": "naan",
+          "q": null,
+          "u": "",
+          "a": "Brood & wraps",
+          "x": "erbij"
+        }
       ],
       "stappen": [
         "Meng de gember, de helft van de knoflook, de helft van het chilipoeder, 1 theelepel zout en het komijn- en korianderpoeder door de yoghurt. Schep de kip erdoor, dek af en laat 1 uur marineren in de koelkast (een hele nacht kan ook).",
@@ -41,7 +164,8 @@
         "Doe de tomatenblokjes, verse tomaat en witte wijnazijn in de pan en laat 10 minuten pruttelen. Pureer met een staafmixer tot een gladde saus en roer de room erdoor.",
         "Veeg de pan schoon, smelt de rest van de boter en bak de kip (met yoghurt) 5 minuten aan. Voeg de saus toe en laat nog 5–10 minuten pruttelen. Proef en breng op smaak met suiker, zout, peper of extra chili.",
         "Bestrooi met veel korianderblad. Serveer met rijst en naan."
-      ]
+      ],
+      "fotoBron": "Hubie / Wikimedia Commons, CC BY-SA"
     },
     {
       "id": "carbonara",
@@ -50,15 +174,51 @@
       "keuken": "Italiaans",
       "tijd": 20,
       "personen": 2,
-      "foto": null,
+      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Spaghetti_alla_Carbonara.jpg?width=900",
       "bron": "Google Drive – Kookboek",
       "ingredienten": [
-        {"n": "spaghetti", "q": 220, "u": "g", "a": "Pasta, rijst & granen", "x": "of spaghettoni"},
-        {"n": "guanciale", "q": 25, "u": "g", "a": "Vlees & vis", "x": "of pancetta, in blokjes"},
-        {"n": "olijfolie", "q": 2, "u": "el", "a": "Voorraadkast"},
-        {"n": "ei", "mv": "eieren", "q": 2, "u": "", "a": "Zuivel & eieren", "heel": true},
-        {"n": "Parmezaanse kaas", "q": 50, "u": "g", "a": "Zuivel & eieren", "x": "of pecorino, vers geraspt"},
-        {"n": "zwarte peper", "q": null, "u": "", "a": "Voorraadkast", "x": "versgemalen"}
+        {
+          "n": "spaghetti",
+          "q": 220,
+          "u": "g",
+          "a": "Pasta, rijst & granen",
+          "x": "of spaghettoni"
+        },
+        {
+          "n": "guanciale",
+          "q": 25,
+          "u": "g",
+          "a": "Vlees & vis",
+          "x": "of pancetta, in blokjes"
+        },
+        {
+          "n": "olijfolie",
+          "q": 2,
+          "u": "el",
+          "a": "Voorraadkast"
+        },
+        {
+          "n": "ei",
+          "mv": "eieren",
+          "q": 2,
+          "u": "",
+          "a": "Zuivel & eieren",
+          "heel": true
+        },
+        {
+          "n": "Parmezaanse kaas",
+          "q": 50,
+          "u": "g",
+          "a": "Zuivel & eieren",
+          "x": "of pecorino, vers geraspt"
+        },
+        {
+          "n": "zwarte peper",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast",
+          "x": "versgemalen"
+        }
       ],
       "stappen": [
         "Kook de pasta in ruim gezouten water al dente.",
@@ -66,7 +226,8 @@
         "Klop de eieren los met de geraspte kaas en flink wat zwarte peper.",
         "Giet de pasta af en schep hem door de guanciale in de pan. Haal de pan van het vuur en laat even iets afkoelen.",
         "Roer het ei-kaasmengsel erdoor tot alle pasta bedekt is en serveer direct."
-      ]
+      ],
+      "fotoBron": "Mattes Boch / Wikimedia Commons, publiek domein"
     },
     {
       "id": "lasagne-chorizo",
@@ -75,28 +236,136 @@
       "keuken": "Italiaans",
       "tijd": 75,
       "personen": 6,
-      "foto": null,
+      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Lasagna_food.jpg?width=900",
       "bron": "Google Drive – Kookboek",
       "ingredienten": [
-        {"n": "lasagneblad", "mv": "lasagnebladen", "q": 9, "u": "", "a": "Pasta, rijst & granen", "x": "vers", "heel": true},
-        {"n": "chorizo", "q": 135, "u": "g", "a": "Vlees & vis"},
-        {"n": "gehakt", "q": 500, "u": "g", "a": "Vlees & vis"},
-        {"n": "knoflook", "q": 5, "u": "teen", "a": "Groente & fruit"},
-        {"n": "ui", "mv": "uien", "q": 1, "u": "", "a": "Groente & fruit", "x": "witte ui, ±150 g"},
-        {"n": "wortel", "mv": "wortels", "q": 1, "u": "", "a": "Groente & fruit"},
-        {"n": "courgette", "mv": "courgettes", "q": 1, "u": "", "a": "Groente & fruit"},
-        {"n": "rode paprika", "mv": "rode paprika's", "q": 1, "u": "", "a": "Groente & fruit"},
-        {"n": "passata", "q": 160, "u": "g", "a": "Blik & potten", "x": "gezeefde tomaten"},
-        {"n": "tomatenblokjes", "q": 2, "u": "blik", "a": "Blik & potten", "x": "blikken van 400 g"},
-        {"n": "tomatenpuree", "q": 140, "u": "g", "a": "Blik & potten"},
-        {"n": "geraspte mozzarella", "q": 100, "u": "g", "a": "Zuivel & eieren"},
-        {"n": "Parmezaanse kaas", "q": 30, "u": "g", "a": "Zuivel & eieren"},
-        {"n": "boter of margarine", "q": 50, "u": "g", "a": "Zuivel & eieren", "x": "voor de bechamel"},
-        {"n": "bloem", "q": 50, "u": "g", "a": "Voorraadkast", "x": "voor de bechamel"},
-        {"n": "melk", "q": 500, "u": "ml", "a": "Zuivel & eieren", "x": "voor de bechamel"},
-        {"n": "paprikapoeder", "q": null, "u": "", "a": "Kruiden & specerijen"},
-        {"n": "Italiaanse kruiden", "q": null, "u": "", "a": "Kruiden & specerijen"},
-        {"n": "zout en zwarte peper", "q": null, "u": "", "a": "Voorraadkast"}
+        {
+          "n": "lasagneblad",
+          "mv": "lasagnebladen",
+          "q": 9,
+          "u": "",
+          "a": "Pasta, rijst & granen",
+          "x": "vers",
+          "heel": true
+        },
+        {
+          "n": "chorizo",
+          "q": 135,
+          "u": "g",
+          "a": "Vlees & vis"
+        },
+        {
+          "n": "gehakt",
+          "q": 500,
+          "u": "g",
+          "a": "Vlees & vis"
+        },
+        {
+          "n": "knoflook",
+          "q": 5,
+          "u": "teen",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "ui",
+          "mv": "uien",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "witte ui, ±150 g"
+        },
+        {
+          "n": "wortel",
+          "mv": "wortels",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "courgette",
+          "mv": "courgettes",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "rode paprika",
+          "mv": "rode paprika's",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "passata",
+          "q": 160,
+          "u": "g",
+          "a": "Blik & potten",
+          "x": "gezeefde tomaten"
+        },
+        {
+          "n": "tomatenblokjes",
+          "q": 2,
+          "u": "blik",
+          "a": "Blik & potten",
+          "x": "blikken van 400 g"
+        },
+        {
+          "n": "tomatenpuree",
+          "q": 140,
+          "u": "g",
+          "a": "Blik & potten"
+        },
+        {
+          "n": "geraspte mozzarella",
+          "q": 100,
+          "u": "g",
+          "a": "Zuivel & eieren"
+        },
+        {
+          "n": "Parmezaanse kaas",
+          "q": 30,
+          "u": "g",
+          "a": "Zuivel & eieren"
+        },
+        {
+          "n": "boter of margarine",
+          "q": 50,
+          "u": "g",
+          "a": "Zuivel & eieren",
+          "x": "voor de bechamel"
+        },
+        {
+          "n": "bloem",
+          "q": 50,
+          "u": "g",
+          "a": "Voorraadkast",
+          "x": "voor de bechamel"
+        },
+        {
+          "n": "melk",
+          "q": 500,
+          "u": "ml",
+          "a": "Zuivel & eieren",
+          "x": "voor de bechamel"
+        },
+        {
+          "n": "paprikapoeder",
+          "q": null,
+          "u": "",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "Italiaanse kruiden",
+          "q": null,
+          "u": "",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "zout en zwarte peper",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast"
+        }
       ],
       "stappen": [
         "Verwarm de oven voor op 180 °C.",
@@ -107,7 +376,8 @@
         "Maak de bechamel: smelt de boter, roer de bloem erdoor en voeg al roerend beetje bij beetje melk toe tot het indikt. Roer er wat Parmezaanse kaas door en breng op smaak.",
         "Schep een laagje saus in een ovenschaal, leg er lasagnebladen op en herhaal. Eindig met vleessaus en bechamel en bestrooi met mozzarella en Parmezaanse kaas.",
         "Bak 30–35 minuten tot goudbruin en laat 5–10 minuten rusten."
-      ]
+      ],
+      "fotoBron": "Jon Sullivan / Wikimedia Commons, publiek domein"
     },
     {
       "id": "giouvetsi",
@@ -118,21 +388,89 @@
       "tijdNotitie": "vooral pruttelen",
       "personen": 2,
       "personenNotitie": "2 à 3 personen",
-      "foto": null,
+      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Giouvetsi.JPG?width=900",
       "bron": "Google Drive – Kookboek",
       "ingredienten": [
-        {"n": "orzo", "q": 250, "u": "g", "a": "Pasta, rijst & granen", "x": "of risoni"},
-        {"n": "runderriblappen", "q": 500, "u": "g", "a": "Vlees & vis"},
-        {"n": "ui", "mv": "uien", "q": 1, "u": "", "a": "Groente & fruit"},
-        {"n": "knoflook", "q": 2, "u": "teen", "a": "Groente & fruit"},
-        {"n": "tijm", "q": 1.5, "u": "tl", "a": "Kruiden & specerijen"},
-        {"n": "oregano", "q": 1.5, "u": "tl", "a": "Kruiden & specerijen"},
-        {"n": "laurierblad", "mv": "laurierbladeren", "q": 1, "u": "", "a": "Kruiden & specerijen", "heel": true},
-        {"n": "tomatenblokjes", "q": 1, "u": "blik", "a": "Blik & potten", "x": "blik van 400 g"},
-        {"n": "bouillon", "q": 500, "u": "ml", "a": "Voorraadkast", "x": "runder- of groentebouillon"},
-        {"n": "Parmezaanse kaas", "q": null, "u": "", "a": "Zuivel & eieren", "x": "geraspt"},
-        {"n": "boter of olie", "q": null, "u": "", "a": "Voorraadkast", "x": "om te bakken"},
-        {"n": "zout en zwarte peper", "q": null, "u": "", "a": "Voorraadkast"}
+        {
+          "n": "orzo",
+          "q": 250,
+          "u": "g",
+          "a": "Pasta, rijst & granen",
+          "x": "of risoni"
+        },
+        {
+          "n": "runderriblappen",
+          "q": 500,
+          "u": "g",
+          "a": "Vlees & vis"
+        },
+        {
+          "n": "ui",
+          "mv": "uien",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "knoflook",
+          "q": 2,
+          "u": "teen",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "tijm",
+          "q": 1.5,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "oregano",
+          "q": 1.5,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "laurierblad",
+          "mv": "laurierbladeren",
+          "q": 1,
+          "u": "",
+          "a": "Kruiden & specerijen",
+          "heel": true
+        },
+        {
+          "n": "tomatenblokjes",
+          "q": 1,
+          "u": "blik",
+          "a": "Blik & potten",
+          "x": "blik van 400 g"
+        },
+        {
+          "n": "bouillon",
+          "q": 500,
+          "u": "ml",
+          "a": "Voorraadkast",
+          "x": "runder- of groentebouillon"
+        },
+        {
+          "n": "Parmezaanse kaas",
+          "q": null,
+          "u": "",
+          "a": "Zuivel & eieren",
+          "x": "geraspt"
+        },
+        {
+          "n": "boter of olie",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast",
+          "x": "om te bakken"
+        },
+        {
+          "n": "zout en zwarte peper",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast"
+        }
       ],
       "stappen": [
         "Snipper de ui, snijd de knoflook fijn en snijd het vlees in kleine blokjes. Breng het vlees op smaak met zout en peper.",
@@ -140,7 +478,8 @@
         "Voeg de tomatenblokjes en het laurierblad toe, en zoveel water dat het vlees net onder staat. Deksel erop en ongeveer 2 uur laten pruttelen.",
         "Haal het laurierblad eruit, voeg de bouillon toe en breng aan de kook. Kook de orzo erin gaar (± 11 minuten) en blijf goed roeren. Is de bouillon op maar de orzo nog niet gaar? Doe er dan een scheutje bij.",
         "Zet het vuur uit en roer er wat geraspte Parmezaanse kaas door."
-      ]
+      ],
+      "fotoBron": "Robert Kindermann / Wikimedia Commons, CC BY-SA"
     },
     {
       "id": "roti-zoete-aardappel",
@@ -149,23 +488,106 @@
       "keuken": "Surinaams",
       "tijd": 45,
       "personen": 2,
-      "foto": null,
+      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Roti_Masala_Trafasie.JPG?width=900",
       "bron": "Google Drive – Kookboek",
       "ingredienten": [
-        {"n": "zoete aardappel", "q": 450, "u": "g", "a": "Groente & fruit"},
-        {"n": "ui", "mv": "uien", "q": 1, "u": "", "a": "Groente & fruit", "x": "groot"},
-        {"n": "knoflook", "q": 2, "u": "teen", "a": "Groente & fruit"},
-        {"n": "rode peper", "mv": "rode pepers", "q": 1, "u": "", "a": "Groente & fruit"},
-        {"n": "kousenband", "q": 250, "u": "g", "a": "Groente & fruit", "x": "of haricots verts"},
-        {"n": "kippendijfilet", "q": 350, "u": "g", "a": "Vlees & vis"},
-        {"n": "rotivel", "mv": "rotivellen", "q": 4, "u": "", "a": "Brood & wraps", "heel": true},
-        {"n": "ei", "mv": "eieren", "q": 4, "u": "", "a": "Zuivel & eieren", "heel": true},
-        {"n": "masala", "q": 1, "u": "el", "a": "Kruiden & specerijen"},
-        {"n": "komijn", "q": 0.5, "u": "tl", "a": "Kruiden & specerijen"},
-        {"n": "maggiblokje", "mv": "maggiblokjes", "q": 1, "u": "", "a": "Kruiden & specerijen", "heel": true},
-        {"n": "zwarte peper", "q": null, "u": "", "a": "Voorraadkast", "x": "snufje"},
-        {"n": "olie", "q": null, "u": "", "a": "Voorraadkast", "x": "om te bakken"},
-        {"n": "water", "q": 200, "u": "ml", "a": "Voorraadkast", "geenBoodschap": true}
+        {
+          "n": "zoete aardappel",
+          "q": 450,
+          "u": "g",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "ui",
+          "mv": "uien",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit",
+          "x": "groot"
+        },
+        {
+          "n": "knoflook",
+          "q": 2,
+          "u": "teen",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "rode peper",
+          "mv": "rode pepers",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "kousenband",
+          "q": 250,
+          "u": "g",
+          "a": "Groente & fruit",
+          "x": "of haricots verts"
+        },
+        {
+          "n": "kippendijfilet",
+          "q": 350,
+          "u": "g",
+          "a": "Vlees & vis"
+        },
+        {
+          "n": "rotivel",
+          "mv": "rotivellen",
+          "q": 4,
+          "u": "",
+          "a": "Brood & wraps",
+          "heel": true
+        },
+        {
+          "n": "ei",
+          "mv": "eieren",
+          "q": 4,
+          "u": "",
+          "a": "Zuivel & eieren",
+          "heel": true
+        },
+        {
+          "n": "masala",
+          "q": 1,
+          "u": "el",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "komijn",
+          "q": 0.5,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "maggiblokje",
+          "mv": "maggiblokjes",
+          "q": 1,
+          "u": "",
+          "a": "Kruiden & specerijen",
+          "heel": true
+        },
+        {
+          "n": "zwarte peper",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast",
+          "x": "snufje"
+        },
+        {
+          "n": "olie",
+          "q": null,
+          "u": "",
+          "a": "Voorraadkast",
+          "x": "om te bakken"
+        },
+        {
+          "n": "water",
+          "q": 200,
+          "u": "ml",
+          "a": "Voorraadkast",
+          "geenBoodschap": true
+        }
       ],
       "stappen": [
         "Schil de zoete aardappels en snijd ze in blokjes, net als de kip. Snipper de ui, snijd knoflook en rode peper fijn en snijd de boontjes in stukjes.",
@@ -174,7 +596,8 @@
         "Voeg de kip toe en bak rondom bruin. Doe dan de zoete aardappel en het water erbij en laat ongeveer 30 minuten zachtjes pruttelen met de deksel erop. Af en toe roeren.",
         "Kook ondertussen de eieren hard. Doe de boontjes er de laatste 5–10 minuten bij.",
         "Warm de rotivellen op en serveer met de curry en de eieren."
-      ]
+      ],
+      "fotoBron": "Laig / Wikimedia Commons"
     },
     {
       "id": "wrap-zoete-aardappel",
@@ -183,19 +606,74 @@
       "keuken": "Fusion",
       "tijd": 25,
       "personen": 2,
-      "foto": null,
+      "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Wrap_up_and_done_(3250921760).jpg?width=900",
       "bron": "Google Drive – Kookboek",
       "ingredienten": [
-        {"n": "volkoren tortillawrap", "mv": "volkoren tortillawraps", "q": 2, "u": "", "a": "Brood & wraps", "heel": true},
-        {"n": "rode ui", "mv": "rode uien", "q": 1, "u": "", "a": "Groente & fruit"},
-        {"n": "rode paprika", "mv": "rode paprika's", "q": 1, "u": "", "a": "Groente & fruit"},
-        {"n": "zoete aardappel", "q": 500, "u": "g", "a": "Groente & fruit"},
-        {"n": "tomaat", "mv": "tomaten", "q": 2, "u": "", "a": "Groente & fruit"},
-        {"n": "sla", "q": 50, "u": "g", "a": "Groente & fruit"},
-        {"n": "curry madras", "q": 1.5, "u": "tl", "a": "Kruiden & specerijen"},
-        {"n": "tomatenpuree", "q": 1, "u": "el", "a": "Blik & potten"},
-        {"n": "chilisaus", "q": 3, "u": "el", "a": "Blik & potten"},
-        {"n": "yoghurt", "q": 65, "u": "ml", "a": "Zuivel & eieren"}
+        {
+          "n": "volkoren tortillawrap",
+          "mv": "volkoren tortillawraps",
+          "q": 2,
+          "u": "",
+          "a": "Brood & wraps",
+          "heel": true
+        },
+        {
+          "n": "rode ui",
+          "mv": "rode uien",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "rode paprika",
+          "mv": "rode paprika's",
+          "q": 1,
+          "u": "",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "zoete aardappel",
+          "q": 500,
+          "u": "g",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "tomaat",
+          "mv": "tomaten",
+          "q": 2,
+          "u": "",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "sla",
+          "q": 50,
+          "u": "g",
+          "a": "Groente & fruit"
+        },
+        {
+          "n": "curry madras",
+          "q": 1.5,
+          "u": "tl",
+          "a": "Kruiden & specerijen"
+        },
+        {
+          "n": "tomatenpuree",
+          "q": 1,
+          "u": "el",
+          "a": "Blik & potten"
+        },
+        {
+          "n": "chilisaus",
+          "q": 3,
+          "u": "el",
+          "a": "Blik & potten"
+        },
+        {
+          "n": "yoghurt",
+          "q": 65,
+          "u": "ml",
+          "a": "Zuivel & eieren"
+        }
       ],
       "stappen": [
         "Snijd de ui, tomaten, paprika en zoete aardappel. Fruit de ui en voeg dan paprika, tomaat en zoete aardappel toe. Bak tot de zoete aardappel goudbruin is.",
@@ -203,7 +681,8 @@
         "Meng ondertussen de yoghurt met 2 el chilisaus.",
         "Warm de wraps op volgens de verpakking.",
         "Vul elke wrap met een handje sla en de helft van het zoete-aardappelmengsel. Schenk er wat chiliyoghurt over en serveer."
-      ]
+      ],
+      "fotoBron": "Miia Ranta / Wikimedia Commons, CC BY-SA"
     }
   ]
 }
