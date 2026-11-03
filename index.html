@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ThuisBesteld</title>
+<meta name="theme-color" content="#F5F1EA">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="ThuisBesteld">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rijst:#F5F1EA; --papier:#FBF9F5; --steen:#E8E1D6; --lijn:#DDD4C6;
+  --houtskool:#2F2C28; --grijs:#7D766C; --eik:#B08D67; --klei:#9C5B3B; --salie:#7F8C72;
+  --serif:"Shippori Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  --sans:"Zen Kaku Gothic New", -apple-system, "Helvetica Neue", sans-serif;
+  --r:18px;
+  --safe-b:env(safe-area-inset-bottom,0px); --safe-t:env(safe-area-inset-top,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--rijst);color:var(--houtskool);font-family:var(--sans);font-size:16px;line-height:1.5}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
+.app{max-width:560px;margin:0 auto;padding:calc(var(--safe-t) + 18px) 22px calc(var(--safe-b) + 110px)}
+header.top{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+header.top svg{width:40px;height:40px;flex:none}
+.merk{font-family:var(--serif);font-size:24px;font-weight:700;letter-spacing:.02em;line-height:1.1}
+.merk small{display:block;font-family:var(--sans);font-size:12px;font-weight:400;color:var(--grijs);letter-spacing:.14em;text-transform:uppercase;margin-top:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;margin:0}
+h2{font-size:26px;line-height:1.25}
+.kop{display:flex;justify-content:space-between;align-items:flex-end;margin:0 0 14px}
+.linkknop{font-size:14px;color:var(--klei);border-bottom:1px solid currentColor;padding-bottom:1px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 22px 4px;margin:0 -22px 10px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:7px 15px;border:1px solid var(--lijn);border-radius:999px;font-size:14px;color:var(--grijs);background:transparent;transition:.2s}
+.chip.aan{background:var(--houtskool);border-color:var(--houtskool);color:var(--papier)}
+.label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grijs);margin:18px 0 8px}
+.lijst{display:grid;gap:22px;margin-top:22px}
+.kaart{background:var(--papier);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 0 var(--lijn);text-align:left;width:100%;display:block}
+.beeld{aspect-ratio:4/3;width:100%;display:block;object-fit:cover;background:var(--steen)}
+.ph{aspect-ratio:4/3;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:rgba(47,44,40,.55)}
+.ph svg{width:30%;max-width:120px}
+.ph span{font-family:var(--serif);font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+.kaart .info{padding:16px 18px 18px;display:flex;gap:12px;align-items:center}
+.kaart h3{font-size:19px;line-height:1.3}
+.meta{font-size:13px;color:var(--grijs);margin-top:4px}
+.plus{flex:none;margin-left:auto;width:42px;height:42px;border-radius:50%;border:1px solid var(--houtskool);display:grid;place-items:center;font-size:22px;line-height:1;transition:.2s}
+.plus.in{background:var(--houtskool);color:var(--papier)}
+.leeg{text-align:center;color:var(--grijs);padding:50px 10px}
+.leeg svg{width:70px;opacity:.5;margin-bottom:10px}
+
+/* tabbalk */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:rgba(245,241,234,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--lijn);padding:8px 0 calc(var(--safe-b) + 8px);z-index:20}
+nav.tabs .in{max-width:560px;margin:0 auto;display:flex}
+nav.tabs button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;letter-spacing:.06em;color:var(--grijs);position:relative}
+nav.tabs button svg{width:24px;height:24px}
+nav.tabs button.aan{color:var(--houtskool)}
+.badge{position:absolute;top:-4px;left:calc(50% + 6px);background:var(--klei);color:#fff;font-size:11px;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;padding:0 5px}
+
+/* detail */
+.blad{position:fixed;inset:0;background:var(--rijst);z-index:30;overflow-y:auto;transform:translateY(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);-webkit-overflow-scrolling:touch}
+.blad.open{transform:none}
+.blad .binnen{max-width:560px;margin:0 auto;padding-bottom:calc(var(--safe-b) + 120px)}
+.sluit{position:fixed;top:calc(var(--safe-t) + 14px);right:max(16px, calc(50% - 264px));width:40px;height:40px;border-radius:50%;background:rgba(251,249,245,.92);display:grid;place-items:center;z-index:31;box-shadow:0 1px 4px rgba(0,0,0,.08);font-size:20px}
+.detail-tekst{padding:24px 22px 0}
+.detail-tekst h2{font-size:28px}
+.beschr{color:var(--grijs);margin:8px 0 0}
+.paneel{background:var(--papier);border-radius:var(--r);padding:16px 18px;margin-top:20px}
+.personen{display:flex;align-items:center;justify-content:space-between}
+.stepper{display:flex;align-items:center;gap:14px}
+.stepper button{width:36px;height:36px;border-radius:50%;border:1px solid var(--lijn);font-size:20px;display:grid;place-items:center}
+.stepper b{font-family:var(--serif);font-size:22px;min-width:22px;text-align:center}
+.restje{display:flex;align-items:center;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid var(--steen);font-size:14px;color:var(--grijs);width:100%}
+.vink{width:22px;height:22px;border-radius:6px;border:1px solid var(--eik);display:grid;place-items:center;flex:none;font-size:14px;color:var(--papier)}
+.aan>.vink,.vink.aan{background:var(--salie);border-color:var(--salie)}
+ul.ingr{list-style:none;margin:0;padding:0}
+ul.ingr li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--steen);font-size:15px}
+ul.ingr li:last-child{border:0}
+ul.ingr .q{min-width:76px;font-weight:500}
+ul.ingr .x{color:var(--grijs);font-size:13px}
+ol.stappen{margin:0;padding:0;list-style:none;counter-reset:s}
+ol.stappen li{counter-increment:s;display:flex;gap:14px;padding:10px 0;font-size:15px}
+ol.stappen li::before{content:counter(s);font-family:var(--serif);font-weight:700;color:var(--eik);font-size:18px;min-width:18px;line-height:1.3}
+.noot{font-size:12px;color:var(--grijs);margin-top:6px}
+.onderbalk{position:fixed;left:0;right:0;bottom:0;padding:14px 22px calc(var(--safe-b) + 14px);background:linear-gradient(to top,var(--rijst) 70%,rgba(245,241,234,0));z-index:31}
+.knop{display:block;width:100%;max-width:516px;margin:0 auto;background:var(--houtskool);color:var(--papier);border-radius:999px;padding:15px 20px;font-size:16px;font-weight:500;letter-spacing:.02em;text-align:center}
+.knop.licht{background:transparent;color:var(--houtskool);border:1px solid var(--houtskool)}
+.knop+.knop{margin-top:10px}
+
+/* bestelling */
+.regel{display:flex;gap:14px;align-items:center;background:var(--papier);border-radius:var(--r);padding:12px;margin-bottom:12px}
+.regel .mini{width:64px;height:64px;border-radius:12px;overflow:hidden;flex:none}
+.regel .mini > *{width:100%;height:100%;aspect-ratio:auto}
+.regel .mini .ph svg{width:55%}
+.regel .mini .ph span{display:none}
+.regel h3{font-size:16px;line-height:1.3}
+.regel .stepper{gap:8px;margin-top:6px}
+.regel .stepper button{width:28px;height:28px;font-size:16px}
+.regel .stepper b{font-size:16px;font-family:var(--sans)}
+.weg{margin-left:auto;color:var(--grijs);font-size:13px;align-self:flex-start;padding:4px}
+textarea,select{width:100%;font:inherit;font-size:16px;background:var(--papier);border:1px solid var(--lijn);border-radius:14px;padding:12px 14px;color:var(--houtskool);resize:none;-webkit-appearance:none;appearance:none}
+.wanneer{display:flex;gap:8px;flex-wrap:wrap}
+
+/* boodschappen */
+.afd{margin-top:22px}
+.afd h3{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grijs);font-weight:500;margin-bottom:6px}
+.item{display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:11px 0;border-bottom:1px solid var(--steen);font-size:15px}
+.item.aan .tekst{text-decoration:line-through;color:var(--grijs)}
+.voor{font-size:13px;color:var(--grijs);margin-top:4px}
+
+/* status */
+.status{display:flex;flex-direction:column;align-items:center;text-align:center;padding:calc(var(--safe-t) + 70px) 30px 40px}
+.status svg.enso{width:120px;height:120px;margin-bottom:24px}
+.enso path{stroke-dasharray:400;stroke-dashoffset:400;animation:teken 1.8s ease forwards}
+@keyframes teken{to{stroke-dashoffset:40}}
+.status h2{font-size:28px}
+.status p{color:var(--grijs);margin:8px 0 26px}
+.fases{list-style:none;padding:0;margin:0 0 34px;text-align:left;width:100%;max-width:320px}
+.fases li{display:flex;gap:12px;align-items:center;padding:9px 0;color:var(--lijn);transition:color .6s}
+.fases li .stip{width:10px;height:10px;border-radius:50%;border:1px solid currentColor;flex:none;transition:.6s}
+.fases li.klaar{color:var(--houtskool)}
+.fases li.klaar .stip{background:var(--salie);border-color:var(--salie)}
+.toast{position:fixed;left:50%;bottom:calc(var(--safe-b) + 96px);transform:translate(-50%,20px);background:var(--houtskool);color:var(--papier);padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.3s;z-index:60;white-space:nowrap}
+.toast.zie{opacity:1;transform:translate(-50%,0)}
+.verborgen{display:none!important}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 21L24 7l17 14M10.5 18.5V40h27V18.5" fill="none" stroke="#2F2C28" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 28h18c0 5-4 8-9 8s-9-3-9-8z" fill="#9C5B3B"/><path d="M28 20l-5 7.5M31.5 21.5l-5.5 6.5" stroke="#B08D67" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <div class="merk">ThuisBesteld<small>Vanavond op tafel</small></div>
+  </header>
+
+  <main id="v-menu">
+    <div class="kop"><h2>Wat eten we?</h2><button class="linkknop" id="verras">Verras me</button></div>
+    <div class="label">Keuken</div>
+    <div class="chips" id="f-keuken"></div>
+    <div class="label">Tijd</div>
+    <div class="chips" id="f-tijd"></div>
+    <div class="lijst" id="lijst"></div>
+  </main>
+
+  <main id="v-bestelling" class="verborgen">
+    <div class="kop"><h2>Je bestelling</h2></div>
+    <div id="mandje"></div>
+    <div id="bestel-form">
+      <div class="label">Wanneer</div>
+      <div class="wanneer chips" id="wanneer"></div>
+      <div class="label">Opmerking voor de chef</div>
+      <textarea id="opmerking" rows="3" placeholder="Extra kaas graag…"></textarea>
+      <div style="height:20px"></div>
+      <button class="knop" id="plaats">Bestelling plaatsen</button>
+      <button class="knop licht" id="naar-lijst">Boodschappenlijst bekijken</button>
+    </div>
+  </main>
+
+  <main id="v-boodschappen" class="verborgen">
+    <div class="kop"><h2>Boodschappen</h2><button class="linkknop" id="wis">Vinkjes wissen</button></div>
+    <div id="lijst-voor" class="voor"></div>
+    <div id="bood"></div>
+    <div style="height:24px"></div>
+    <button class="knop" id="deel-lijst">Deel lijst</button>
+  </main>
+</div>
+
+<nav class="tabs"><div class="in">
+  <button data-tab="menu" class="aan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 12h18M5 12c0 4 3 7 7 7s7-3 7-7"/><path d="M14 4l-3 8M18 5l-5 7"/></svg>Menu</button>
+  <button data-tab="bestelling"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Bestelling<span class="badge verborgen" id="badge"></span></button>
+  <button data-tab="boodschappen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>Boodschappen</button>
+</div></nav>
+
+<section class="blad" id="detail"><button class="sluit" id="sluit-detail" aria-label="Sluiten">✕</button><div class="binnen" id="detail-in"></div></section>
+<section class="blad" id="status"><div class="binnen status" id="status-in"></div></section>
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function laad(k, d){ try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch(e){ return d; } }
+function bewaar(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+
+let R = [];
+let mandje = laad('tb-mandje', []);      // [{id, p, restje}]
+let gevinkt = laad('tb-gevinkt', {});
+let filter = { keuken: 'Alles', tijd: 'alles' };
+let wanneer = 'Vanavond';
+
+const AFDELINGEN = ['Groente & fruit','Vlees & vis','Zuivel & eieren','Pasta, rijst & granen','Brood & wraps','Blik & potten','Kruiden & specerijen','Voorraadkast'];
+const EENHEID = { g:['g','g'], ml:['ml','ml'], el:['el','el'], tl:['tl','tl'], cm:['cm','cm'], teen:['teen','tenen'], blik:['blik','blikken'], bosje:['bosje','bosjes'] };
+const KLEUR = { Indiaas:'#DCC39C', Italiaans:'#D2B39E', Grieks:'#B7C0B2', Surinaams:'#CDB898', Fusion:'#C9BFB1' };
+const TIJDEN = [ ['alles','Alles'], ['snel','≤ 30 min'], ['midden','30–60 min'], ['lang','> 1 uur'] ];
+
+/* ---------- afronden ---------- */
+// In het recept: netjes afgerond (½ ui mag)
+function rondRecept(q, u, heel){
+  if (heel) return Math.max(1, Math.round(q));
+  if (u === 'g' || u === 'ml'){ const s = q < 50 ? 5 : q < 250 ? 10 : 25; return Math.max(s, Math.round(q / s) * s); }
+  if (u === 'el' || u === 'tl') return q < 1 ? Math.max(.25, Math.round(q * 4) / 4) : Math.round(q * 2) / 2;
+  return Math.max(.5, Math.round(q * 2) / 2);
+}
+// Op de boodschappenlijst: altijd naar boven, op wat je echt koopt
+function rondWinkel(q, u, heel){
+  if (heel || u === '' || u === 'teen' || u === 'blik' || u === 'bosje') return Math.max(1, Math.ceil(q - 1e-9));
+  if (u === 'g' || u === 'ml'){ const s = q <= 100 ? 25 : 50; return Math.ceil(q / s - 1e-9) * s; }
+  return rondRecept(q, u, heel);
+}
+function getal(q){
+  if (Number.isInteger(q) || q >= 10) return String(Math.round(q));
+  const heel = Math.floor(q), f = Math.round((q - heel) * 4) / 4;
+  return (heel || '') + ({0.25:'¼', 0.5:'½', 0.75:'¾'}[f] || '');
+}
+function tekstHoeveel(ing, q){
+  if (q == null) return { q:'', n: ing.n };
+  const meer = q > 1;
+  if (!ing.u) return { q: getal(q), n: meer && ing.mv ? ing.mv : ing.n };
+  const e = EENHEID[ing.u] || [ing.u, ing.u];
+  return { q: getal(q) + ' ' + e[meer ? 1 : 0], n: ing.n };
+}
+const porties = m => m.p + (m.restje ? 1 : 0);
+const tijdTekst = t => t < 60 ? t + ' min' : (Math.floor(t/60) + ' u' + (t % 60 ? ' ' + (t % 60) : '')).trim();
+
+/* ---------- beeld ---------- */
+function beeld(r){
+  if (r.foto) return `<img class="beeld" src="${esc(r.foto)}" alt="" loading="lazy">`;
+  return `<div class="ph" style="background:${KLEUR[r.keuken] || '#D8CFC2'}">
+    <svg viewBox="0 0 100 70" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 34h80c0 18-18 30-40 30S10 52 10 34z"/><path d="M38 26c0-6 6-6 6-12M52 26c0-6 6-6 6-12"/><path d="M62 6l-14 26M74 8L56 32"/></svg>
+    <span>${esc(r.keuken)}</span></div>`;
+}
+
+/* ---------- menu ---------- */
+function pastTijd(t){
+  return filter.tijd === 'alles' || (filter.tijd === 'snel' && t <= 30) || (filter.tijd === 'midden' && t > 30 && t <= 60) || (filter.tijd === 'lang' && t > 60);
+}
+function tekenFilters(){
+  const keukens = ['Alles', ...[...new Set(R.map(r => r.keuken))].sort()];
+  $('#f-keuken').innerHTML = keukens.map(k => `<button class="chip ${filter.keuken === k ? 'aan' : ''}" data-k="${esc(k)}">${esc(k)}</button>`).join('');
+  $('#f-tijd').innerHTML = TIJDEN.map(([v, l]) => `<button class="chip ${filter.tijd === v ? 'aan' : ''}" data-t="${v}">${l}</button>`).join('');
+}
+function tekenMenu(){
+  tekenFilters();
+  const zicht = R.filter(r => (filter.keuken === 'Alles' || r.keuken === filter.keuken) && pastTijd(r.tijd)).sort((a, b) => a.tijd - b.tijd);
+  $('#lijst').innerHTML = zicht.length ? zicht.map(r => {
+    const inM = mandje.some(m => m.id === r.id);
+    return `<div class="kaart" data-open="${r.id}">${beeld(r)}<div class="info"><div><h3>${esc(r.naam)}</h3><div class="meta">${esc(r.keuken)} · ${tijdTekst(r.tijd)}</div></div><button class="plus ${inM ? 'in' : ''}" data-plus="${r.id}" aria-label="Toevoegen">${inM ? '✓' : '+'}</button></div></div>`;
+  }).join('') : `<div class="leeg">Niets gevonden met deze filters.</div>`;
+}
+
+/* ---------- detail ---------- */
+let open = null; // {r, p, restje}
+function openRecept(id){
+  const r = R.find(x => x.id === id); if (!r) return;
+  const m = mandje.find(x => x.id === id);
+  open = { r, p: m ? m.p : 2, restje: m ? !!m.restje : false };
+  tekenDetail();
+  $('#detail').scrollTop = 0;
+  $('#detail').classList.add('open');
+}
+function tekenDetail(){
+  const { r, p, restje } = open, n = p + (restje ? 1 : 0), f = n / r.personen;
+  const inM = mandje.some(m => m.id === r.id);
+  const ingr = r.ingredienten.map(i => {
+    const t = tekstHoeveel(i, i.q == null ? null : rondRecept(i.q * f, i.u, i.heel));
+    return `<li><span class="q">${t.q || '<span class="x">naar smaak</span>'}</span><span>${esc(t.n)}${i.x ? ` <span class="x">· ${esc(i.x)}</span>` : ''}</span></li>`;
+  }).join('');
+  $('#detail-in').innerHTML = `${beeld(r)}
+    <div class="detail-tekst">
+      <div class="meta">${esc(r.keuken)} · ${tijdTekst(r.tijd)}${r.tijdNotitie ? ' (' + esc(r.tijdNotitie) + ')' : ''}</div>
+      <h2 style="margin-top:6px">${esc(r.naam)}</h2>
+      <p class="beschr">${esc(r.beschrijving || '')}</p>
+      <div class="paneel">
+        <div class="personen"><span>Personen</span><div class="stepper"><button data-d="-1">−</button><b>${p}</b><button data-d="1">+</button></div></div>
+        <button class="restje ${restje ? 'aan' : ''}" id="restje"><span class="vink ${restje ? 'aan' : ''}">${restje ? '✓' : ''}</span>+ restje voor lunch morgen</button>
+      </div>
+      <div class="label" style="margin-top:26px">Ingrediënten · ${n} ${n === 1 ? 'portie' : 'porties'}</div>
+      <div class="paneel" style="margin-top:0"><ul class="ingr">${ingr}</ul></div>
+      ${r.personen !== n ? `<div class="noot">Origineel recept is voor ${r.personenNotitie || r.personen + ' personen'}; hoeveelheden zijn omgerekend en afgerond.</div>` : ''}
+      <div class="label" style="margin-top:26px">Bereiding</div>
+      <ol class="stappen">${r.stappen.map(s => `<li><span>${esc(s)}</span></li>`).join('')}</ol>
+      ${r.bron ? `<div class="noot">Bron: ${/^https?:/.test(r.bron) ? `<a href="${esc(r.bron)}" style="color:inherit">${esc(new URL(r.bron).hostname.replace('www.',''))}</a>` : esc(r.bron)}</div>` : ''}
+    </div>
+    <div class="onderbalk"><button class="knop" id="voeg-toe">${inM ? 'Bestelling bijwerken' : 'Toevoegen aan bestelling'} · ${n} ${n === 1 ? 'portie' : 'porties'}</button></div>`;
+}
+function sluitDetail(){ $('#detail').classList.remove('open'); open = null; }
+
+/* ---------- mandje ---------- */
+function bewaarMandje(){ bewaar('tb-mandje', mandje); const b = $('#badge'); b.textContent = mandje.length; b.classList.toggle('verborgen', !mandje.length); }
+function toggleMandje(id){
+  const i = mandje.findIndex(m => m.id === id);
+  if (i >= 0){ mandje.splice(i, 1); toast('Uit je bestelling gehaald'); }
+  else { mandje.push({ id, p: 2, restje: false }); toast('Toegevoegd aan je bestelling'); }
+  bewaarMandje(); tekenMenu();
+}
+function tekenBestelling(){
+  const items = mandje.map(m => ({ m, r: R.find(r => r.id === m.id) })).filter(x => x.r);
+  $('#bestel-form').classList.toggle('verborgen', !items.length);
+  $('#mandje').innerHTML = items.length ? items.map(({ m, r }) => `
+    <div class="regel"><div class="mini">${beeld(r)}</div>
+      <div><h3>${esc(r.naam)}</h3>
+        <div class="stepper" data-id="${r.id}"><button data-dp="-1">−</button><b>${m.p}</b><button data-dp="1">+</button><span class="meta" style="margin:0">pers.${m.restje ? ' + restje' : ''}</span></div>
+      </div><button class="weg" data-weg="${r.id}">Verwijder</button></div>`).join('')
+    : `<div class="leeg"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 6c10 0 18 8 18 18s-8 18-18 18S6 34 6 24c0-7 4-13 10-16" stroke-linecap="round"/></svg><div>Nog niets gekozen.<br>Kijk rustig rond in het menu.</div></div>`;
+  $('#wanneer').innerHTML = ['Vanavond', 'Morgen', 'Dit weekend'].map(w => `<button class="chip ${wanneer === w ? 'aan' : ''}" data-w="${w}">${w}</button>`).join('');
+}
+
+/* ---------- boodschappen ---------- */
+function maakLijst(){
+  const map = new Map(), checken = new Map();
+  for (const m of mandje){
+    const r = R.find(x => x.id === m.id); if (!r) continue;
+    const f = porties(m) / r.personen;
+    for (const i of r.ingredienten){
+      if (i.geenBoodschap) continue;
+      const voorraad = i.a === 'Voorraadkast' || i.a === 'Kruiden & specerijen';
+      if (i.q == null && voorraad){ checken.set(i.n.toLowerCase(), i.n); continue; }
+      if (i.q == null && [...map.keys()].some(k => k.startsWith(i.n.toLowerCase() + '|'))) continue;
+      const k = i.n.toLowerCase() + '|' + i.u;
+      const e = map.get(k) || { ...i, som: 0 };
+      e.som += (i.q || 0) * f; e.heel = e.heel || i.heel;
+      map.set(k, e);
+    }
+  }
+  const groepen = AFDELINGEN.map(a => ({ a, items: [] }));
+  for (const e of map.values()){
+    const t = tekstHoeveel(e, e.som ? rondWinkel(e.som, e.u, e.heel) : null);
+    const g = groepen.find(g => g.a === e.a) || groepen[groepen.length - 1];
+    g.items.push({ key: e.n.toLowerCase() + '|' + e.u, sort: e.n.toLowerCase(), tekst: t.q ? `${t.q} ${t.n}` : t.n });
+    checken.delete(e.n.toLowerCase());
+  }
+  groepen.forEach(g => g.items.sort((a, b) => a.sort.localeCompare(b.sort, 'nl')));
+  const check = [...checken.values()].map(n => ({ key: 'c|' + n.toLowerCase(), tekst: n }));
+  return { groepen: groepen.filter(g => g.items.length), check };
+}
+function tekenBoodschappen(){
+  const { groepen, check } = maakLijst();
+  const namen = mandje.map(m => { const r = R.find(x => x.id === m.id); return r ? `${r.naam} (${porties(m)})` : null; }).filter(Boolean);
+  $('#lijst-voor').textContent = namen.length ? 'Voor: ' + namen.join(', ') : '';
+  $('#deel-lijst').classList.toggle('verborgen', !namen.length);
+  $('#wis').classList.toggle('verborgen', !namen.length);
+  if (!namen.length){ $('#bood').innerHTML = `<div class="leeg">Kies eerst gerechten in het menu,<br>dan verschijnt hier je lijst.</div>`; return; }
+  const item = it => `<button class="item ${gevinkt[it.key] ? 'aan' : ''}" data-vink="${esc(it.key)}"><span class="vink ${gevinkt[it.key] ? 'aan' : ''}">${gevinkt[it.key] ? '✓' : ''}</span><span class="tekst">${esc(it.tekst)}</span></button>`;
+  $('#bood').innerHTML = groepen.map(g => `<div class="afd"><h3>${g.a}</h3>${g.items.map(item).join('')}</div>`).join('')
+    + (check.length ? `<div class="afd"><h3>Even checken of je dit nog hebt</h3>${check.map(item).join('')}</div>` : '');
+}
+function lijstTekst(){
+  const { groepen, check } = maakLijst();
+  let t = '🛒 Boodschappen – ThuisBesteld\n';
+  t += mandje.map(m => { const r = R.find(x => x.id === m.id); return r ? `• ${r.naam} (${porties(m)} pers.)` : ''; }).filter(Boolean).join('\n') + '\n';
+  for (const g of groepen) t += `\n${g.a.toUpperCase()}\n` + g.items.map(i => '◻️ ' + i.tekst).join('\n') + '\n';
+  if (check.length) t += `\nEVEN CHECKEN\n` + check.map(i => '◻️ ' + i.tekst).join('\n') + '\n';
+  return t;
+}
+
+/* ---------- delen ---------- */
+async function deel(tekst, titel, bestand){
+  if (navigator.share){
+    try { await navigator.share({ title: titel, text: tekst }); return true; }
+    catch(e){ if (e.name === 'AbortError') return false; }
+  }
+  try { await navigator.clipboard.writeText(tekst); toast('Gekopieerd – plak het in WhatsApp of Notities'); return true; }
+  catch(e){
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([tekst], { type: 'text/plain' }));
+    a.download = bestand; a.click(); return true;
+  }
+}
+async function plaatsBestelling(){
+  if (!mandje.length) return;
+  const regels = mandje.map(m => { const r = R.find(x => x.id === m.id); return r ? `• ${r.naam} – ${m.p} pers.${m.restje ? ' + restje voor lunch' : ''}` : ''; }).filter(Boolean);
+  const opm = $('#opmerking').value.trim();
+  const tekst = `🍽️ Nieuwe bestelling via ThuisBesteld\n\n${regels.join('\n')}\n\n🕰️ ${wanneer}${opm ? `\n💬 ${opm}` : ''}\n\nDank je, chef!`;
+  if (await deel(tekst, 'Bestelling', 'bestelling.txt')) toonStatus();
+}
+function toonStatus(){
+  const fases = ['Bestelling verstuurd naar de chef', 'De chef bekijkt je keuze', 'Boodschappen worden gecheckt', `${wanneer} aan tafel`];
+  $('#status-in').innerHTML = `
+    <svg class="enso" viewBox="0 0 120 120"><path d="M60 14c26 0 46 20 46 46s-20 46-46 46S14 86 14 60c0-17 9-31 23-39" fill="none" stroke="#2F2C28" stroke-width="5" stroke-linecap="round"/></svg>
+    <h2>Bestelling ontvangen</h2><p>Rustig aan, er wordt voor je gezorgd.</p>
+    <ul class="fases">${fases.map(f => `<li><span class="stip"></span>${esc(f)}</li>`).join('')}</ul>
+    <button class="knop" id="status-dicht" style="max-width:320px">Terug naar het menu</button>`;
+  $('#status').classList.add('open');
+  [...document.querySelectorAll('.fases li')].forEach((li, i) => { if (i < 3) setTimeout(() => li.classList.add('klaar'), 600 + i * 900); });
+}
+
+/* ---------- navigatie ---------- */
+function naarTab(t){
+  ['menu', 'bestelling', 'boodschappen'].forEach(v => $('#v-' + v).classList.toggle('verborgen', v !== t));
+  document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('aan', b.dataset.tab === t));
+  if (t === 'menu') tekenMenu();
+  if (t === 'bestelling') tekenBestelling();
+  if (t === 'boodschappen') tekenBoodschappen();
+  window.scrollTo(0, 0);
+}
+let toastT;
+function toast(t){ const el = $('#toast'); el.textContent = t; el.classList.add('zie'); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('zie'), 2200); }
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('button, [data-open]'); if (!t) return;
+  const d = t.dataset;
+  if (d.tab) return naarTab(d.tab);
+  if (d.k){ filter.keuken = d.k; return tekenMenu(); }
+  if (d.t){ filter.tijd = d.t; return tekenMenu(); }
+  if (d.plus){ e.stopPropagation(); return toggleMandje(d.plus); }
+  if (d.open) return openRecept(d.open);
+  if (d.d && open){ open.p = Math.min(12, Math.max(1, open.p + +d.d)); return tekenDetail(); }
+  if (t.id === 'restje' && open){ open.restje = !open.restje; return tekenDetail(); }
+  if (t.id === 'voeg-toe' && open){
+    const m = mandje.find(x => x.id === open.r.id);
+    if (m){ m.p = open.p; m.restje = open.restje; } else mandje.push({ id: open.r.id, p: open.p, restje: open.restje });
+    bewaarMandje(); sluitDetail(); tekenMenu(); return toast('In je bestelling');
+  }
+  if (t.id === 'sluit-detail') return sluitDetail();
+  if (t.id === 'verras'){ const pool = R.filter(r => (filter.keuken === 'Alles' || r.keuken === filter.keuken) && pastTijd(r.tijd)); if (pool.length) openRecept(pool[Math.floor(Math.random() * pool.length)].id); return; }
+  if (d.dp){ const m = mandje.find(x => x.id === t.parentElement.dataset.id); m.p = Math.min(12, Math.max(1, m.p + +d.dp)); bewaarMandje(); return tekenBestelling(); }
+  if (d.weg){ mandje = mandje.filter(m => m.id !== d.weg); bewaarMandje(); return tekenBestelling(); }
+  if (d.w){ wanneer = d.w; return tekenBestelling(); }
+  if (t.id === 'plaats') return plaatsBestelling();
+  if (t.id === 'naar-lijst') return naarTab('boodschappen');
+  if (d.vink){ gevinkt[d.vink] = !gevinkt[d.vink]; bewaar('tb-gevinkt', gevinkt); return tekenBoodschappen(); }
+  if (t.id === 'wis'){ gevinkt = {}; bewaar('tb-gevinkt', gevinkt); return tekenBoodschappen(); }
+  if (t.id === 'deel-lijst') return deel(lijstTekst(), 'Boodschappen', 'boodschappen.txt');
+  if (t.id === 'status-dicht'){ $('#status').classList.remove('open'); return naarTab('menu'); }
+});
+
+fetch('recepten.json', { cache: 'no-cache' })
+  .then(r => r.json())
+  .then(d => { R = d.recepten || []; mandje = mandje.filter(m => R.some(r => r.id === m.id)); bewaarMandje(); tekenMenu(); })
+  .catch(() => { $('#lijst').innerHTML = '<div class="leeg">De recepten konden niet geladen worden.<br>Check je internet en probeer opnieuw.</div>'; });
+</script>
+</body>
+</html>
