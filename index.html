@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ThuisBesteld</title>
-<meta name="theme-color" content="#F5F1EA">
+<meta name="theme-color" content="#1E1E1E">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="ThuisBesteld">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --rijst:#F5F1EA; --papier:#FBF9F5; --steen:#E8E1D6; --lijn:#DDD4C6;
@@ -129,6 +129,67 @@ textarea,select{width:100%;font:inherit;font-size:16px;background:var(--papier);
 .toast{position:fixed;left:50%;bottom:calc(var(--safe-b) + 96px);transform:translate(-50%,20px);background:var(--houtskool);color:var(--papier);padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.3s;z-index:60;white-space:nowrap}
 .toast.zie{opacity:1;transform:translate(-50%,0)}
 .verborgen{display:none!important}
+
+/* ===== stijl v2: donker met oranje ===== */
+:root{--rijst:#1E1E1E;--papier:#2A2A2A;--steen:#333;--lijn:#444;--houtskool:#F4F4F4;--grijs:#A8A8A8;--eik:#FF8A1F;--klei:#FF8A1F;--salie:#FF8A1F;--oranje:#FF8A1F;--serif:"Nunito",-apple-system,sans-serif;--sans:"Nunito",-apple-system,sans-serif}
+html,body{font-weight:600}
+h1,h2,h3{font-family:var(--sans);font-weight:800}
+.app{padding-top:calc(var(--safe-t) + 14px)}
+.top2{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:12px}
+.hoi{font-size:27px;font-weight:900;line-height:1.1}
+.hoi small{display:block;font-size:14px;font-weight:600;color:var(--grijs);margin-top:5px}
+.pill{display:flex;align-items:center;gap:8px;background:#fff;color:#1E1E1E;border-radius:999px;padding:9px 15px 9px 11px;font-weight:800;font-size:15px;flex:none}
+.pill svg{width:26px;height:26px}
+.zoek{display:flex;align-items:center;gap:12px;background:#333;border-radius:999px;padding:14px 20px;margin-bottom:24px}
+.zoek svg{width:22px;height:22px;flex:none;color:var(--oranje)}
+.zoek input{flex:1;min-width:0;background:none;border:0;color:#fff;font:inherit;font-size:17px;outline:none;padding:0}
+.zoek input::placeholder{color:#9A9A9A}
+.tegels,.snel{display:flex;gap:12px;overflow-x:auto;margin:0 -22px;padding:0 22px 6px;scrollbar-width:none}
+.tegels::-webkit-scrollbar,.snel::-webkit-scrollbar{display:none}
+.tegel{flex:none;width:82px;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px;color:#D8D8D8;font-weight:700}
+.tegel .ico{width:70px;height:70px;border-radius:50%;background:#2E2E2E;display:grid;place-items:center;font-size:34px;border:2.5px solid transparent;transition:.2s}
+.tegel.aan .ico{border-color:var(--oranje);background:#3A2A1A}
+.tegel.aan{color:#fff}
+.sectiekop{display:flex;justify-content:space-between;align-items:baseline;margin:26px 0 12px}
+.sectiekop h3{font-size:20px;font-weight:900}
+.toon{color:#fff;font-weight:800;text-decoration:underline;font-size:15px}
+.sneltegel{flex:none;width:104px;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#D8D8D8}
+.sneltegel .vlak{width:104px;height:86px;border-radius:26px;display:grid;place-items:center;font-size:42px;border:3px solid transparent;transition:.2s}
+.sneltegel.aan .vlak{border-color:#fff;transform:scale(1.03)}
+.sneltegel.aan{color:#fff}
+.banner{margin:28px -22px 0;background:#F2C14E;color:#1E1E1E;padding:24px 22px;display:flex;gap:14px;align-items:center;text-align:left;width:calc(100% + 44px)}
+.banner .btekst{flex:1}
+.banner small{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.banner h4{font-size:24px;font-weight:900;font-style:italic;margin:4px 0 6px;line-height:1.1}
+.banner p{margin:0 0 14px;font-size:15px;font-weight:600}
+.banner .bknop{display:inline-block;background:#1E1E1E;color:#fff;border-radius:999px;padding:11px 18px;font-weight:800;font-size:15px}
+.banner .bfoto{width:118px;height:118px;border-radius:50%;object-fit:cover;flex:none;border:4px solid #fff;transform:rotate(-6deg);background:#fff;display:grid;place-items:center;font-size:52px;overflow:hidden}
+.banner .bfoto img{width:100%;height:100%;object-fit:cover}
+.lijst{gap:26px;margin-top:4px}
+.kaart{background:transparent;box-shadow:none;border-radius:0;overflow:visible}
+.kaart .beeld,.kaart .ph{aspect-ratio:16/9;border-radius:18px}
+.kaart .info{padding:12px 2px 2px}
+.kaart h3{font-size:18px;font-weight:800}
+.badges{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.bdg{font-size:12px;font-weight:700;background:#333;color:#DDD;border-radius:999px;padding:3px 10px}
+.bdg.o{background:#3A2A1A;color:var(--oranje)}
+.chip{border-width:2px;border-color:#555;color:#fff;font-weight:800}
+.chip.aan{background:var(--oranje);border-color:var(--oranje);color:#1E1E1E}
+.knop{background:var(--oranje);color:#1E1E1E;font-weight:800}
+.knop.licht{background:transparent;color:#fff;border:2px solid #555}
+.plus{border:2px solid var(--oranje);color:var(--oranje);font-weight:800}
+.plus.in{background:var(--oranje);color:#1E1E1E}
+nav.tabs{background:rgba(30,30,30,.96);border-top:1px solid #333}
+nav.tabs button{color:#9A9A9A;font-size:12px;font-weight:700}
+nav.tabs button.aan{color:var(--oranje)}
+.badge{background:var(--oranje);color:#1E1E1E;font-weight:800}
+.sluit{background:rgba(30,30,30,.85);color:#fff}
+.paneel{background:#2A2A2A}
+.enso path{stroke:#fff}
+.linkknop{color:var(--oranje)}
+.kook{background:#141414}
+.kook-nav .verder{background:var(--oranje);color:#1E1E1E;font-weight:800}
+.toast{background:#fff;color:#1E1E1E;font-weight:700}
 .kook{position:fixed;inset:0;z-index:50;background:#2B2925;color:#F5F1EA;display:flex;flex-direction:column;padding:calc(var(--safe-t) + 14px) 22px calc(var(--safe-b) + 18px);transform:translateY(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .kook.open{transform:none}
 .kook-top{display:flex;align-items:center;gap:12px;max-width:640px;width:100%;margin:0 auto}
@@ -160,19 +221,18 @@ textarea,select{width:100%;font:inherit;font-size:16px;background:var(--papier);
 </head>
 <body>
 <div class="app">
-  <header class="top">
-    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 21L24 7l17 14M10.5 18.5V40h27V18.5" fill="none" stroke="#2F2C28" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 28h18c0 5-4 8-9 8s-9-3-9-8z" fill="#9C5B3B"/><path d="M28 20l-5 7.5M31.5 21.5l-5.5 6.5" stroke="#B08D67" stroke-width="1.8" stroke-linecap="round"/></svg>
-    <div class="merk">ThuisBesteld<small>Vanavond op tafel</small></div>
+  <header class="top2">
+    <div class="hoi">Hoi! 👋<small>Wat eten we vanavond?</small></div>
+    <div class="pill"><svg viewBox="0 0 48 48"><path d="M7 21L24 7l17 14M10.5 18.5V40h27V18.5" fill="none" stroke="#1E1E1E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 28h18c0 5-4 8-9 8s-9-3-9-8z" fill="#FF8A1F"/></svg>ThuisBesteld</div>
   </header>
 
   <main id="v-menu">
-    <div class="kop"><h2>Wat eten we?</h2><button class="linkknop" id="verras">Verras me</button></div>
-    <div class="label">Keuken</div>
-    <div class="chips" id="f-keuken"></div>
-    <div class="label">Tijd</div>
-    <div class="chips" id="f-tijd"></div>
-    <div class="label">Soort</div>
-    <div class="chips" id="f-vega"></div>
+    <label class="zoek"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><input id="zoek" type="search" placeholder="Gerecht of ingrediënt zoeken?" autocomplete="off"></label>
+    <div class="tegels" id="f-keuken"></div>
+    <div class="sectiekop"><h3>Vind iets lekkers</h3><button class="toon" id="verras">Verras me</button></div>
+    <div class="snel" id="f-snel"></div>
+    <button class="banner" id="aanrader"></button>
+    <div class="sectiekop"><h3 id="aantal">Alle gerechten</h3></div>
     <div class="lijst" id="lijst"></div>
   </main>
 
@@ -219,7 +279,7 @@ function bewaar(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch
 let R = [];
 let mandje = laad('tb-mandje', []);      // [{id, p, restje}]
 let gevinkt = laad('tb-gevinkt', {});
-let filter = { keuken: 'Alles', tijd: 'alles', vega: false };
+let filter = { keuken: 'Alles', tijd: 'alles', vega: false, q: '' };
 let wanneer = 'Vanavond';
 
 const AFDELINGEN = ['Groente & fruit','Vlees & vis','Zuivel & eieren','Pasta, rijst & granen','Brood & wraps','Blik & potten','Kruiden & specerijen','Voorraadkast'];
@@ -268,18 +328,28 @@ function beeld(r){
 function pastTijd(t){
   return filter.tijd === 'alles' || (filter.tijd === 'snel' && t <= 30) || (filter.tijd === 'midden' && t > 30 && t <= 60) || (filter.tijd === 'lang' && t > 60);
 }
+const EMOJI = { Alles:'🍽️', Italiaans:'🍝', Indiaas:'🍛', Grieks:'🫒', Surinaams:'🫓', Aziatisch:'🥢', Hollands:'🥔', 'Midden-Oosters':'🧆', Fusion:'🌯' };
+const SNEL = [ ['t','snel','Snel klaar','⚡','#FF8A1F'], ['t','midden','Avondje','🍳','#5B3F6E'], ['t','lang','Uitpakken','🍲','#E9A7B4'], ['v','1','Vega','🌱','#BFD9E2'] ];
+function pastZoek(r){
+  const q = filter.q.trim().toLowerCase(); if (!q) return true;
+  return (r.naam + ' ' + r.keuken + ' ' + r.ingredienten.map(i => i.n).join(' ')).toLowerCase().includes(q);
+}
 function tekenFilters(){
   const keukens = ['Alles', ...[...new Set(R.map(r => r.keuken))].sort()];
-  $('#f-keuken').innerHTML = keukens.map(k => `<button class="chip ${filter.keuken === k ? 'aan' : ''}" data-k="${esc(k)}">${esc(k)}</button>`).join('');
-  $('#f-tijd').innerHTML = TIJDEN.map(([v, l]) => `<button class="chip ${filter.tijd === v ? 'aan' : ''}" data-t="${v}">${l}</button>`).join('');
-  $('#f-vega').innerHTML = `<button class="chip ${!filter.vega ? 'aan' : ''}" data-vega="0">Alles</button><button class="chip ${filter.vega ? 'aan' : ''}" data-vega="1">🌱 Vega</button>`;
+  $('#f-keuken').innerHTML = keukens.map(k => `<button class="tegel ${filter.keuken === k ? 'aan' : ''}" data-k="${esc(k)}"><span class="ico">${EMOJI[k] || '🍴'}</span>${esc(k)}</button>`).join('');
+  $('#f-snel').innerHTML = SNEL.map(([s, v, l, e, c]) => { const aan = s === 't' ? filter.tijd === v : filter.vega;
+    return `<button class="sneltegel ${aan ? 'aan' : ''}" ${s === 't' ? `data-t="${v}"` : 'data-vega="1"'}><span class="vlak" style="background:${c}">${e}</span>${l}</button>`; }).join('');
+  if (R.length){ const r = R[Math.floor(Date.now() / 864e5) % R.length];
+    $('#aanrader').dataset.open = r.id;
+    $('#aanrader').innerHTML = `<span class="btekst"><small>Aanrader van de chef</small><h4>${esc(r.naam)}</h4><p>${esc(r.keuken)} · ${tijdTekst(r.tijd)}</p><span class="bknop">Bekijk gerecht</span></span><span class="bfoto">${r.foto ? `<img src="${esc(r.foto)}" alt="">` : (EMOJI[r.keuken] || '🍴')}</span>`; }
 }
 function tekenMenu(){
   tekenFilters();
-  const zicht = R.filter(r => (filter.keuken === 'Alles' || r.keuken === filter.keuken) && pastTijd(r.tijd) && (!filter.vega || r.vega)).sort((a, b) => a.tijd - b.tijd);
+  const zicht = R.filter(r => (filter.keuken === 'Alles' || r.keuken === filter.keuken) && pastTijd(r.tijd) && (!filter.vega || r.vega) && pastZoek(r)).sort((a, b) => a.tijd - b.tijd);
+  $('#aantal').textContent = (filter.keuken === 'Alles' && filter.tijd === 'alles' && !filter.vega && !filter.q ? 'Alle gerechten' : 'Gevonden') + ` (${zicht.length})`;
   $('#lijst').innerHTML = zicht.length ? zicht.map(r => {
     const inM = mandje.some(m => m.id === r.id);
-    return `<div class="kaart" data-open="${r.id}">${beeld(r)}<div class="info"><div><h3>${esc(r.naam)}</h3><div class="meta">${esc(r.keuken)} · ${tijdTekst(r.tijd)}${r.vega ? ' · 🌱 vega' : ''}</div></div><button class="plus ${inM ? 'in' : ''}" data-plus="${r.id}" aria-label="Toevoegen">${inM ? '✓' : '+'}</button></div></div>`;
+    return `<div class="kaart" data-open="${r.id}">${beeld(r)}<div class="info"><div><h3>${esc(r.naam)}</h3><div class="badges"><span class="bdg o">⏱ ${tijdTekst(r.tijd)}</span><span class="bdg">${EMOJI[r.keuken] || '🍴'} ${esc(r.keuken)}</span>${r.vega ? '<span class="bdg">🌱 Vega</span>' : ''}</div></div><button class="plus ${inM ? 'in' : ''}" data-plus="${r.id}" aria-label="Toevoegen">${inM ? '✓' : '+'}</button></div></div>`;
   }).join('') : `<div class="leeg">Niets gevonden met deze filters.</div>`;
 }
 
@@ -503,9 +573,9 @@ document.addEventListener('click', e => {
   const t = e.target.closest('button, [data-open]'); if (!t) return;
   const d = t.dataset;
   if (d.tab) return naarTab(d.tab);
-  if (d.k){ filter.keuken = d.k; return tekenMenu(); }
-  if (d.t){ filter.tijd = d.t; return tekenMenu(); }
-  if (d.vega){ filter.vega = d.vega === '1'; return tekenMenu(); }
+  if (d.k){ filter.keuken = filter.keuken === d.k ? 'Alles' : d.k; return tekenMenu(); }
+  if (d.t){ filter.tijd = filter.tijd === d.t ? 'alles' : d.t; return tekenMenu(); }
+  if (d.vega){ filter.vega = !filter.vega; return tekenMenu(); }
   if (d.plus){ e.stopPropagation(); return toggleMandje(d.plus); }
   if (d.open) return openRecept(d.open);
   if (d.d && open){ open.p = Math.min(12, Math.max(1, open.p + +d.d)); return tekenDetail(); }
@@ -534,6 +604,7 @@ document.addEventListener('click', e => {
   if (t.id === 'status-dicht'){ $('#status').classList.remove('open'); return naarTab('menu'); }
 });
 
+document.getElementById('zoek').addEventListener('input', e => { filter.q = e.target.value; tekenMenu(); });
 fetch('recepten.json', { cache: 'no-cache' })
   .then(r => r.json())
   .then(d => { R = d.recepten || []; mandje = mandje.filter(m => R.some(r => r.id === m.id)); bewaarMandje(); tekenMenu(); })
